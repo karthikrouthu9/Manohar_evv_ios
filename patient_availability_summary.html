@@ -26,7 +26,23 @@
     
     
 
-    function onDeviceReady() {
+		
+		    var device1;			
+
+function success(uuid)		
+{		
+     device1 = {uuid:uuid,device_model:"",device_platform:"",device_version:""};
+     patient_availability_summary_page();
+};		
+
+function fail(uuid)		
+{		alert("failure function reg");};	
+    
+    
+		function onDeviceReady() {
+                       window.plugins.uniqueDeviceID.get(success, fail);
+    }
+    function patient_availability_summary_page(){
    	var element = document.getElementById('deviceProperties');
 	
        var device_uuid = device.uuid;
