@@ -650,35 +650,37 @@ $(document).ready(function(){
 		
     $("#check_in_form").submit(function(event)
 	{
-		        alert('checkin');
     	
+        alert('checkin-101');
     	$('#check_in_time').html('Loading...');
 		$('#check_in_time').prop('disabled', true);
 		$('#expenses1').prop('disabled', true);
 		$('#mileage1').prop('disabled', true);
 		$('#exampleInputminutesspent').prop('disabled', true);
-
-	
+        alert('checkin-102');
+        
 		var latitude=$('input#latitude').val();
 		var longitude=$('input#longitude').val();
 		var imgData=$('input#imgData').val();
 	
-	
+        alert('checkin-103');	
 		var visit_uuid = getURLParameters('visit_uuid');
 		var visit_type_id = getURLParameters('visit_type_id');
 		var patient_uuid = getURLParameters('patient_uuid');
 		var user_id = getURLParameters('user_id');
 		var patient_availability_status =$('input[name="my-checkbox"]').is(":checked");
 		var device_uuid = device1.uuid;
-	
+	        alert('checkin-104');
 		if(patient_availability_status)
 		{ 
+                            alert('checkin-105');
 			return fun_submit();
 		}
 		else
 		{
 			
-			
+			        alert('checkin-106');
+                                
 			var expenses1=$("#expenses1").val();
 			if(expenses1 == "")
 			{
