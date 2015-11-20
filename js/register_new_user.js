@@ -8,12 +8,27 @@ $(document).ready(function(){
 
  
  
-	function onDeviceReady() 
-	{
+			
+		    var device1;			
+
+function success(uuid)		
+{		
+     device1 = {uuid:uuid,device_model:"",device_platform:"",device_version:""};
+     register_new_user_page();
+};		
+
+function fail(uuid)		
+{		alert("failure function reg");};	
+    
+    
+		function onDeviceReady() {
+                       window.plugins.uniqueDeviceID.get(success, fail);
+    }
+    function register_new_user_page(){
 	document.addEventListener("backbutton", onBackKeyDown, false);
  
         var element = document.getElementById('deviceProperties');
-		var device_uuid = device.uuid;
+		var device_uuid = device1.uuid;
        	var device_name  = device.name;
        	var device_model  = device.model;
        	var device_platform =  device.platform;                        
@@ -389,7 +404,7 @@ var device_version = document.getElementById("device_version");
           },
           success: function (token) {   
  
-   	var device_uuid = device.uuid;
+   	var device_uuid = device1.uuid;
 	var d = document.getElementById("device_uuid");
 	var token =token;
 	var header = "X-CSRF-TOKEN";
