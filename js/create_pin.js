@@ -1,6 +1,6 @@
 $(document).ready(function(){
 				
-alert('hello');
+
     document.addEventListener("deviceready",onDeviceReady,false);       
 });
 
@@ -17,7 +17,6 @@ function onBackKeyDown(e) {
 
 function success(uuid)		
 {		
-    alert('load-1-'+uuid);
      device1 = {uuid:uuid,device_model:"",device_platform:"",device_version:""};
      create_pin_page();
 };		
@@ -27,19 +26,18 @@ function fail(uuid)
     
     
 		function onDeviceReady() {
-                    alert("failure function reg-101");
+                    alert('in');
                        window.plugins.uniqueDeviceID.get(success, fail);
     }
     function create_pin_page(){
     			
-                            alert('load-2');
     document.addEventListener("backbutton", onBackKeyDown, false);
     var element = document.getElementById('deviceProperties');
 
 
  
        var device_uuid = device1.uuid;
-           alert(device_uuid);
+           
 document.getElementById('device_uuid').value=device_uuid;
 
     var networkState = navigator.connection.type;
@@ -186,9 +184,6 @@ document.getElementById('device_uuid').value=device_uuid;
     }
     else
     {
-        alert('out');
-    	alert(device1.uuid);
-    	alert('in');
 		var new_device_pin=$('input#new_device_pin').val();
 		var confirm_device_pin=$('input#confirm_device_pin').val();
 		var device_uuid = device1.uuid;
