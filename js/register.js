@@ -10,8 +10,23 @@ $(document).ready(function(){
         
 });
 
+		
+		    var device1;			
 
-    function onDeviceReady() {
+function success(uuid)		
+{		
+     device1 = {uuid:uuid,device_model:"",device_platform:"",device_version:""};
+     register_page();
+};		
+
+function fail(uuid)		
+{		alert("failure function reg");};	
+    
+    
+		function onDeviceReady() {
+                       window.plugins.uniqueDeviceID.get(success, fail);
+    }
+    function register_page(){
 
 
 
@@ -30,7 +45,7 @@ function success(uuid)
  
 
 
-       var device_uuid = device.uuid;
+       var device_uuid = device1.uuid;
        document.getElementById('device_uuid').value=device_uuid;
         	var device_version =  device.version;  
         	document.getElementById('device_version').value=device_version;
@@ -320,7 +335,7 @@ var loginpin = /^\d{4}$/;
           },
           success: function (token) {   
 
-   	var device_uuid = device.uuid;
+   	var device_uuid = device1.uuid;
 	var d = document.getElementById("device_uuid");
 	var token =token;
 	var header = "X-CSRF-TOKEN";
@@ -332,7 +347,7 @@ var loginpin = /^\d{4}$/;
               url: 'http://183.82.96.212:8080/m_service/m_resources/evv_enabled_login',
               type: "POST",
 	  		  //data: 'device_uuid='+'8dc6cf319947e729',
-      		  data: 'device_uuid='+device.uuid,
+      		  data: 'device_uuid='+device1.uuid,
               dataType: "json",
               crossDomain: true,
              timeout: 10000,
