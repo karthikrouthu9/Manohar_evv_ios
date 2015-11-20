@@ -11,26 +11,36 @@ $(document).ready(function(){
 });
 
 
-    function onDeviceReady() {
-
-
-
-
-   window.plugins.uniqueDeviceID.get(success, fail);
-
-
-var device;			
+		
+		    var device1;			
 
 function success(uuid)		
 {		
+     device1 = {uuid:uuid,device_model:"",device_platform:"",device_version:""};
+     login_page();
+};		
 
-     device = {uuid:uuid,device_model:"",device_platform:"",device_version:""};
-      document.addEventListener("backbutton", onBackKeyDown, false);
+function fail(uuid)		
+{		alert("failure function reg");};	
+    
+    
+		function onDeviceReady() {
+                       window.plugins.uniqueDeviceID.get(success, fail);
+    }
+    function login_page(){
+
+
+
+
+
+
+
+    document.addEventListener("backbutton", onBackKeyDown, false);
         var element = document.getElementById('deviceProperties');
  
 
 
-       var device_uuid = device.uuid;
+       var device_uuid = device1.uuid;
        document.getElementById('device_uuid').value=device_uuid;
         	var device_version =  device.version;  
         	document.getElementById('device_version').value=device_version;
@@ -45,17 +55,6 @@ function success(uuid)
       return true;
                
     }
-	  
-};		
-
-function fail(uuid)		
-{		
-   	    alert("failure function reg");		
-	
-};	
-
-
-
  }
  
  logout();	
@@ -96,11 +95,12 @@ function fail(uuid)
 function checkloginpassword()
     {
 	
+	
     var networkState = navigator.connection.type;
     if (networkState == Connection.NONE)
     {
        			window.location='./first_screen.html';
-                return true;
+                return false;
                
     }
    
@@ -183,10 +183,11 @@ $('#registrationcode1').prop('disabled', true);
 	
 
 var networkState = navigator.connection.type;
+
     if (networkState == Connection.NONE)
     {
     	window.location='./first_screen.html';
-        return true;
+        return false;
     }
     else
     {
@@ -213,7 +214,13 @@ var loginpin = /^\d{4}$/;
 
 	if (loginpin.test(loginpin1)) 
 		{
-		
+		 var networkState = navigator.connection.type;
+    if (networkState == Connection.NONE)
+    {
+      window.location='./first_screen.html';
+      return true;
+               
+    }
 	 	 $.ajaxSetup({
         xhrFields: {
             withCredentials: true
@@ -234,7 +241,7 @@ var loginpin = /^\d{4}$/;
 			 if(textStatus==="timeout") {
 					  bootbox.dialog({
 					  closeButton: false,
-	        			  message: "Problem connecting with server. Please try after sometime 101.",
+	        			  message: "Problem connecting with server. Please try after sometime.",
 	        			  title: "Alert",
 	        			  buttons: {
 	        			    success: {
@@ -263,9 +270,6 @@ var loginpin = /^\d{4}$/;
         xhr.setRequestHeader(header, token);
     });
     
-	device.uuid=d.value;
-
-    
 	$.ajax({
 		 url:"http://183.82.96.212:8080/m_service/user/login",
 		 data:"username="+d.value+"&password="+loginpin1,
@@ -291,7 +295,7 @@ var loginpin = /^\d{4}$/;
           type:"get",
           dataType:"text",
            crossDomain: true,
-           timeout: 50000,
+           timeout: 10000,
           error:function (jqXHR, textStatus, errorThrown) {
           	$('#button').html('Loading...');
 			$('#button').prop('disabled', false);
@@ -301,7 +305,7 @@ var loginpin = /^\d{4}$/;
         	  if(textStatus==="timeout") {
 				  bootbox.dialog({
 				  closeButton: false,
-        			  message: "Problem connecting with server. Please try after sometime 1.",
+        			  message: "Problem connecting with server. Please try after sometime.",
         			  title: "Alert",
         			  buttons: {
         			    success: {
@@ -321,33 +325,31 @@ var loginpin = /^\d{4}$/;
           },
           success: function (token) {   
 
-   	var device_uuid = device.uuid;
+   	var device_uuid = device1.uuid;
 	var d = document.getElementById("device_uuid");
 	var token =token;
 	var header = "X-CSRF-TOKEN";
     $(document).ajaxSend(function(e, xhr, options) {
         xhr.setRequestHeader(header, token);
     });
-    
-    alert(device.uuid+' diviceuuid');
 	
             $.ajax({
               url: 'http://183.82.96.212:8080/m_service/m_resources/evv_enabled_login',
               type: "POST",
 	  		  //data: 'device_uuid='+'8dc6cf319947e729',
-      		  data: 'device_uuid='+device.uuid,
+      		  data: 'device_uuid='+device1.uuid,
               dataType: "json",
               crossDomain: true,
-             timeout: 20000,
+             timeout: 10000,
 			  error: function (jqXHR, textStatus, errorThrown) {
 			$('#button').html('Loading...');
 			$('#button').prop('disabled', false);
 			 $('#registrationcode1').prop('disabled', false);
-	alert(jqXHR.statusText);
+	
 			$('#button').html('Log-In');
                bootbox.dialog({
                closeButton: false,
-		  message: "Problem connecting with server. Please try after sometime 2.",
+		  message: "Problem connecting with server. Please try after sometime.",
 		  title: "Alert",
 		  buttons: {
 		    success: {
@@ -367,7 +369,7 @@ var loginpin = /^\d{4}$/;
               },
               success: function (data) {
 			  
-			alert(data.response);
+			 
 			  if(data.response=='0')
 			  {
 			
