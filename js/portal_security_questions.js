@@ -20,25 +20,30 @@ function onBackKeyDown(e) {
 
 }
 
-    function onDeviceReady() {
-    	
-		   window.plugins.uniqueDeviceID.get(success, fail);
-
-
-var device;			
+		
+		    var device1;			
 
 function success(uuid)		
 {		
+     device1 = {uuid:uuid,device_model:"",device_platform:"",device_version:""};
+     portal_security_questions_page();
+};		
 
-     device = {uuid:uuid,device_model:"",device_platform:"",device_version:""};
- 		
-		
+function fail(uuid)		
+{		alert("failure function reg");};	
+    
+    
+		function onDeviceReady() {
+                       window.plugins.uniqueDeviceID.get(success, fail);
+    }
+    function portal_security_questions_page(){
+        
     document.addEventListener("backbutton", onBackKeyDown, false);
     var element = document.getElementById('deviceProperties');
 
          //var device_uuid = '8dc6cf319947e729';
        	 var d = document.getElementById("device_uuid");
-		 var device_uuid = device.uuid;
+		 var device_uuid = device1.uuid;
 
     var networkState = navigator.connection.type;
     if (networkState == Connection.NONE)
@@ -93,7 +98,7 @@ function success(uuid)
           },
           success: function (token) {   
  
-   	var device_uuid = device.uuid;
+   	var device_uuid = device1.uuid;
 	var d = document.getElementById("device_uuid");
 	var token =token;
 	var header = "X-CSRF-TOKEN";
@@ -105,7 +110,7 @@ function success(uuid)
               url: 'http://183.82.96.212:8080/m_service/m_resources/get_security_questions',
               type: "POST",
 	  		  //data: 'device_uuid='+'8dc6cf319947e729',
-      		  data: 'device_uuid='+device.uuid,
+      		  data: 'device_uuid='+device1.uuid,
               dataType: "json",
               timeout:20000,
               crossDomain: true,
@@ -157,18 +162,6 @@ function success(uuid)
 	
 
     }}
-
-	  
-};		
-
-function fail(uuid)		
-{		
-   	    alert("failure function reg");		
-	
-};	
-		
-		
-		
 		
 		}
     
@@ -223,7 +216,7 @@ var networkState = navigator.connection.type;
     if (networkState == Connection.NONE)
     {
     	window.location='./first_screen.html';
-        return true;
+        return false;
     }
     else
     {
@@ -259,7 +252,7 @@ var networkState = navigator.connection.type;
            	$('#security_question').prop('disabled', true);
            	$('#security_answer').prop('disabled', true);
       
-      				var device_uuid = device.uuid;
+      				var device_uuid = device1.uuid;
        				var security_question=$('#security_question').val();
 					var security_answer=$('input#security_answer').val().trim();
 					//alert(security_answer);
@@ -337,7 +330,7 @@ var networkState = navigator.connection.type;
           },
           success: function (token) {   
  
-   	var device_uuid = device.uuid;
+   	var device_uuid = device1.uuid;
 	var d = document.getElementById("device_uuid");
 	var token =token;
 	var header = "X-CSRF-TOKEN";
