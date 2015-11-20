@@ -45,7 +45,7 @@ function fail(uuid)
     function patient_availability_summary_page(){
    	var element = document.getElementById('deviceProperties');
 	
-       var device_uuid = device.uuid;
+       var device_uuid = device1.uuid;
        //is_device_registered(device_uuid);
 	 var networkState = navigator.connection.type;
     if (networkState == Connection.NONE)
@@ -89,7 +89,7 @@ function fail(uuid)
 						}
           },
           success: function (token) {   
-   	var device_uuid = device.uuid;
+   	var device_uuid = device1.uuid;
 	var d = document.getElementById("device_uuid");
 	var token =token;
 	var header = "X-CSRF-TOKEN";
