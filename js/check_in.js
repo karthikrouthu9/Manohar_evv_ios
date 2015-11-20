@@ -650,6 +650,7 @@ $(document).ready(function(){
 		
     $("#check_in_form").submit(function(event)
 	{
+		        alert('checkin');
     	
     	$('#check_in_time').html('Loading...');
 		$('#check_in_time').prop('disabled', true);
