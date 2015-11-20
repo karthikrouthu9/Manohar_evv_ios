@@ -13,8 +13,23 @@
 
 
 
+		
+		    var device1;			
 
-    function onDeviceReady() {
+function success(uuid)		
+{		
+ device1 = {uuid:uuid,device_model:"",device_platform:"",device_version:""};
+ check_out_page();
+};		
+
+function fail(uuid)		
+{		alert("failure function reg");};	
+    
+    
+		function onDeviceReady() {
+                       window.plugins.uniqueDeviceID.get(success, fail);
+    }
+    function check_out_page(){
     	
 		
     	document.addEventListener("backbutton", onBackKeyDown, false);
