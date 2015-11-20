@@ -183,6 +183,7 @@ document.getElementById('device_uuid').value=device_uuid;
     }
     else
     {
+    	alert(device1.uuid;
     	alert('in');
 		var new_device_pin=$('input#new_device_pin').val();
 		var confirm_device_pin=$('input#confirm_device_pin').val();
