@@ -27,6 +27,7 @@ function fail(uuid)
     
     
 		function onDeviceReady() {
+                    alert("failure function reg-101");
                        window.plugins.uniqueDeviceID.get(success, fail);
     }
     function create_pin_page(){
