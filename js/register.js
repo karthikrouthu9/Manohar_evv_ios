@@ -1,15 +1,12 @@
 
 $(document).ready(function(){
+				
 
-	
-			$("#pageLoader").hide();
-			
-
-    document.addEventListener("deviceready",onDeviceReady,false);   
-    
-        
+    document.addEventListener("deviceready",onDeviceReady,false);       
 });
+ 
 
+   
 		
 		    var device1;			
 
@@ -27,226 +24,60 @@ function fail(uuid)
                        window.plugins.uniqueDeviceID.get(success, fail);
     }
     function register_page(){
-
-
-
-
-   window.plugins.uniqueDeviceID.get(success, fail);
-
-
-var device;			
-
-function success(uuid)		
-{		
-
-     device = {uuid:uuid,device_model:"",device_platform:"",device_version:""};
-      document.addEventListener("backbutton", onBackKeyDown, false);
-        var element = document.getElementById('deviceProperties');
- 
-
-
-       var device_uuid = device1.uuid;
-       document.getElementById('device_uuid').value=device_uuid;
-        	var device_version =  device.version;  
-        	document.getElementById('device_version').value=device_version;
-        	
+        
+   document.addEventListener("backbutton", onBackKeyDown, false);
+		var element = document.getElementById('deviceProperties');
+		var device_uuid = device1.uuid;
+       	var device_name  = device.name;
+       	var device_model  = device.model;
+       	var device_platform =  device.platform;                        
+       	var device_version =  device.version;  
        
-       
-          
-    var networkState = navigator.connection.type;
-    if (networkState == Connection.NONE)
-    {
-      window.location='./first_screen.html';
-      return true;
-               
-    }
-	  
-};		
+       	document.getElementById('device_uuid').value=device_uuid;
+		document.getElementById('device_model').value=device_model;
+		document.getElementById('device_platform').value=device_platform;
+		document.getElementById('device_version').value=device_version;
 
-function fail(uuid)		
-{		
-   	    alert("failure function reg");		
-	
-};	
-
-
-
- }
- 
- logout();	
- 
-			
-	function add_new_user()
-	{
-			var networkState = navigator.connection.type;
-    			if (networkState == Connection.NONE)
-    				{
-  
-  						window.location='./first_screen.html';
-    return false;
-    }
-    else
-    {
-    	}
-		location.href="register_new_user.html";
-			}
-	
-	function forgot_pin()
-		{
-		
-			var networkState = navigator.connection.type;
-    		if (networkState == Connection.NONE)
-    			{
-  					window.location='./first_screen.html';
-               		return false;
-    			}
-    		else
-    		{
-    		}
-			location.href="forgot_pin.html";
-			}
-			
-
-
-function checkloginpassword()
-    {
-	
-    var networkState = navigator.connection.type;
-    if (networkState == Connection.NONE)
-    {
-       			window.location='./first_screen.html';
-                return true;
-               
-    }
    
-    var c = document.getElementById("registrationcode1");
-    return checkloginpin(c.value)
-   
+			}
 
 
-}
+function makeCorsRequest_register(username,password,pin) {
+
+ var username=username;
+ var password=password;
+
+var device_uuid = document.getElementById("device_uuid");
+var device_name = document.getElementById("device_name");
+var device_model = document.getElementById("device_model");
+var device_platform = document.getElementById("device_platform");
+var device_version = document.getElementById("device_version");
 
 
-function onBackKeyDown(e) {
 
-  navigator.app.exitApp();
-}
- 
-
-
-function logout()
-{
-	
-	
-	 $.ajaxSetup({
+$.ajaxSetup({
         xhrFields: {
             withCredentials: true
         }
     });
-		 $.ajax({
-          url:"http://183.82.96.212:8080/services/session/token",
-          type:"get",
-          dataType:"text",
-           crossDomain: true,
-          error:function (jqXHR, textStatus, errorThrown) {
-			
-          },
-          success: function (token) {   
- 
-   
-	var token =token;
-	var header = "X-CSRF-TOKEN";
-    $(document).ajaxSend(function(e, xhr, options) {
-        xhr.setRequestHeader(header, token);
-    });
-    
-	$.ajax({
-		 url:"http://183.82.96.212:8080/m_service/user/logout",		 
-		 type:"POST",
-		 dataType:"json",	
-		 success:function(data)
-		 {
-		
-		
-		 	
-		 	
-		 },
-		 error:function(jqXHR,textStatus,errorThrown)
-		 {
-		 	
-		
-		 
-		 }
-		});
-		}
-		});
+
+		    
+		   	$('#submit_button').html('Verifying...');
+				$('#submit_button').prop('disabled', true);
+				$('#username1').prop('disabled', true);
+				$('#password1').prop('disabled', true);
+				$('#pin1').prop('disabled', true);
 	
-	
-	}
-
-
-
-
-
-    function checkloginpin(loginpin1) 
-{
-
-
-$('#button').html('Loading...');
-$('#button').prop('disabled', true);
-$('#registrationcode1').prop('disabled', true);
-	
-
-var networkState = navigator.connection.type;
-    if (networkState == Connection.NONE)
-    {
-    	window.location='./first_screen.html';
-        return true;
-    }
-    else
-    {
-
-/*
-        $.blockUI({ 
-            message:  '<div id="pageLoader"><div><img src="images/loading.gif" class="img-responsive img-center" alt="gif icon" style="margin-left: 25px;"/></div></div>', 
-            css: { 
-                top:  ($(window).height() - 100) /2 + 'px', 
-                left: ($(window).width() - 100) /2 + 'px', 
-                width: '50px',
-                backgroundColor: 'transparent',
-                border:'none' 
-            } 
-        }); */
   
-    
-    
-    
-
-var d = document.getElementById("device_uuid");
-
-var loginpin = /^\d{4}$/; 
-
-	if (loginpin.test(loginpin1)) 
-		{
-		
-	 	 $.ajaxSetup({
-        xhrFields: {
-            withCredentials: true
-        }
-    });
-		 $.ajax({
+		   
+        $.ajax({
           url:"http://183.82.96.212:8080/services/session/token",
           type:"get",
           dataType:"text",
-          timeout: 10000,
            crossDomain: true,
+           timeout:20000,
           error:function (jqXHR, textStatus, errorThrown) {
-          	$('#button').html('Loading...');
-			$('#button').prop('disabled', false);
-			 $('#registrationcode1').prop('disabled', false);
-	
-			$('#button').html('Log-In');
-			 if(textStatus==="timeout") {
+			if(textStatus==="timeout") {
 					  bootbox.dialog({
 					  closeButton: false,
 	        			  message: "Problem connecting with server. Please try after sometime.",
@@ -257,7 +88,7 @@ var loginpin = /^\d{4}$/;
 	        			      className: "btn-danger",
 	        			      callback: function() {
 	        			    	  
-	        			    	  onBackKeyDown();
+	        			    	  exit_app();
 	        			      }
 	        			    
 	        			    }
@@ -265,57 +96,137 @@ var loginpin = /^\d{4}$/;
 	        			    
 	        			  }
 	        			});
-						
-						}
-						
+	        			}
           },
           success: function (token) {   
  
-   
+  
 	var token =token;
 	var header = "X-CSRF-TOKEN";
     $(document).ajaxSend(function(e, xhr, options) {
         xhr.setRequestHeader(header, token);
     });
-    
-    alert('pin: '+loginpin1+'uid: '+d.value);
-    
-	$.ajax({
-		 url:"http://183.82.96.212:8080/m_service/user/login",
-		 data:"username="+d.value+"&password="+loginpin1,
-		 type:"POST",
-		 dataType:"json",	
-		 success:function(data)
-		 {
-		
-		   var  device_uuid=d.value;
-		   
-		   
-	 $.ajaxSetup({
+	
+            $.ajax({
+              url: 'http://183.82.96.212:8080/?q=m_service/m_resources/register_device',
+              type: "POST",
+	  		  //data: 'device_uuid='+'8dc6cf319947e729',
+      		  data: { username:encodeURIComponent(username),password:encodeURIComponent(password),pin:encodeURIComponent(pin),device_uuid:encodeURIComponent(device_uuid.value), device_name:encodeURIComponent(device_name.value),device_model:encodeURIComponent(device_model.value),device_platform:encodeURIComponent(device_platform.value), device_version:encodeURIComponent(device_version.value), device_already_registered:encodeURIComponent("0")}, 
+              dataType: "json",
+              crossDomain: true,
+              timeout:20000,
+              
+			  error: function (jqXHR, textStatus, errorThrown) {
+			  $('#submit_button').prop('disabled', false);
+			  $('#username1').prop('disabled', false);
+			  $('#password1').prop('disabled', false);
+			  $('#pin1').prop('disabled', false);
+			  $('#submit_button').html('Register');
+			 bootbox.dialog({
+			 closeButton: false,
+  message: "User is blocked. Please contact your site administrator.",
+  title: "Alert",
+  buttons: {
+    success: {
+      label: "OK",
+      className: "btn-danger",
+      callback: function() {
+      
+      
+  }
+  }
+  }
+}); 
+               
+              },
+              success: function (data) {
+              
+              if(data.response=='1')
+              {
+              
+              $('#submit_button').prop('disabled', false);
+			  $('#username1').prop('disabled', false);
+			  $('#password1').prop('disabled', false);
+			  $('#pin1').prop('disabled', false);
+			  $('#submit_button').html('Register');
+              bootbox.dialog({
+			 closeButton: false,
+  message: "Your business is not activated for this application. Please contact your site administrator.",
+  title: "Alert",
+  buttons: {
+    success: {
+      label: "OK",
+      className: "btn-danger",
+      callback: function() {
+      
+      
+  }
+  }
+  }
+}); 
+              
+    return false;          
+              
+              }
+			  
+			  else if(data.response=='2')
+			  {
+					 $('#submit_button').prop('disabled', false);
+			  $('#username1').prop('disabled', false);
+			  $('#password1').prop('disabled', false);
+			  $('#pin1').prop('disabled', false);
+			  $('#submit_button').html('Register');
+              bootbox.dialog({
+			 closeButton: false,
+  message: "Invalid Username or Password.",
+  title: "Alert",
+  buttons: {
+    success: {
+      label: "OK",
+      className: "btn-danger",
+      callback: function() {
+      
+      
+  }
+  }
+  }
+}); 
+              
+    return false;          
+             
+			  
+			  }
+			  
+			  
+             
+			 else{
+			    //window.location='./security_questions.html?user_id='+data;
+					  var user_id = data;
+			  	  
+			  		   $.ajaxSetup({
         xhrFields: {
             withCredentials: true
         }
     });
 
 		    
-		
 		   
         $.ajax({
           url:"http://183.82.96.212:8080/services/session/token",
           type:"get",
           dataType:"text",
+          timeout:20000,
            crossDomain: true,
-           timeout: 50000,
           error:function (jqXHR, textStatus, errorThrown) {
-          	$('#button').html('Loading...');
-			$('#button').prop('disabled', false);
-			 $('#registrationcode1').prop('disabled', false);
-	
-			$('#button').html('Log-In');
+          $('#submit_button').prop('disabled', false);
+            $('#username1').prop('disabled', false);
+			$('#password1').prop('disabled', false);
+			 $('#pin1').prop('disabled', false);
+		$('#submit_button').html('Register');
         	  if(textStatus==="timeout") {
 				  bootbox.dialog({
 				  closeButton: false,
-        			  message: "Problem connecting with server. Please try after sometime 1.",
+        			  message: "Problem connecting with server. Please try after sometime.",
         			  title: "Alert",
         			  buttons: {
         			    success: {
@@ -323,7 +234,7 @@ var loginpin = /^\d{4}$/;
         			      className: "btn-danger",
         			      callback: function() {
         			    	  
-        			    	  exit_app();
+        			    	  onBackKeyDown();
         			      }
         			    
         			    }
@@ -334,7 +245,7 @@ var loginpin = /^\d{4}$/;
         	  }
           },
           success: function (token) {   
-
+ 
    	var device_uuid = device1.uuid;
 	var d = document.getElementById("device_uuid");
 	var token =token;
@@ -344,199 +255,305 @@ var loginpin = /^\d{4}$/;
     });
 	
             $.ajax({
-              url: 'http://183.82.96.212:8080/m_service/m_resources/evv_enabled_login',
+              url: 'http://183.82.96.212:8080/m_service/m_resources/portal_answer_exists',
               type: "POST",
 	  		  //data: 'device_uuid='+'8dc6cf319947e729',
-      		  data: 'device_uuid='+device1.uuid,
+      		  data: { uid:user_id},
               dataType: "json",
+              timeout:20000,
               crossDomain: true,
-             timeout: 10000,
+              
 			  error: function (jqXHR, textStatus, errorThrown) {
-			$('#button').html('Loading...');
-			$('#button').prop('disabled', false);
-			 $('#registrationcode1').prop('disabled', false);
-	
-			$('#button').html('Log-In');
-               bootbox.dialog({
-               closeButton: false,
-		  message: "Problem connecting with server. Please try after sometime 2.",
-		  title: "Alert",
-		  buttons: {
-		    success: {
-		      label: "OK",
-		      className: "btn-danger",
-		      callback: function() {
-		  
-		    	  
-		    
-		      }
-		    
-		    }
-		    
-		    
-		  }
-		});
+			  	$('#submit_button').prop('disabled', false);
+			    $('#username1').prop('disabled', false);
+				$('#password1').prop('disabled', false);
+			 	$('#pin1').prop('disabled', false);
+				$('#submit_button').html('Register');
+			 bootbox.dialog({
+			 closeButton: false,
+  message: "Security question and answer saving failed. Please try after sometime.",
+  title: "Alert",
+  buttons: {
+    success: {
+      label: "OK",
+      className: "btn-danger",
+      callback: function() {
+  
+   
+    
+      }
+    
+    }
+    
+    
+  }
+});
+               
               },
               success: function (data) {
-			  
-			 
-			  if(data.response=='0')
+              		  if(data.response)
 			  {
-			
-			  window.location='./patient_selection.html';
+			  
+			  	bootbox.dialog({
+			  	closeButton: false,
+  message: "Registration Successful.",
+  title: "Information",
+  buttons: {
+    success: {
+      label: "OK",
+      className: "btn-success",
+      callback: function() {
+
+		
+  
+   window.location='./log-in.html';
+    
+      }
+    
+    }
+    
+    
+  }
+});
+			  
 			  }
 			  else
 			  {
-			$('#button').html('Loading...');
-			$('#button').prop('disabled', false);
-			 $('#registrationcode1').prop('disabled', false);
-	
-			$('#button').html('Log-In'); 
-				bootbox.dialog({
-				closeButton: false,
-        	message: "For security reasons this Agency/User Log-In is inactive. Please contact your Site Administrator/Customer Support.",
-        	title: "Alert",
-        	buttons: {
-        	success: {
-        	label: "OK",
-        	className: "btn-danger",
-        	callback: function() {
-        					  
-        	}
-        }
-        					    
-    }
-});
+			 
+			  window.location='./portal_security_questions.html?user_id='+user_id;
+			
 			  }
 			  
-			  }
-			  });
-			  }
-			  });
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-			
-		 	
-		 },
-		 error:function(jqXHR,textStatus,errorThrown)
-		 {
-		 	
-		$('#button').html('Loading...');
-		$('#button').prop('disabled', false);
-		 $('#registrationcode1').prop('disabled', false);
-	
-		$('#button').html('Log-In');
-  
-		 	bootbox.dialog({
-		 	closeButton: false,
-        	message: "Invalid Log-In PIN.",
-        	title: "Alert",
-        	buttons: {
-        	success: {
-        	label: "OK",
-        	className: "btn-danger",
-        	callback: function() {
-        				  
-        	}
-        }
-        					    
-    }
+}
 });
-		 }
-		});
-		}
-		});
-		return false;
-		}
+}
+});
+			  
+				
+				
+				
+		
+				
+			}	
+            }
+			});
+			}
+			});
+	return false;
+}
+
+ 
+ function onBackKeyDown(e) {
+	 
+		navigator.app.exitApp();
+	 
+	}
+function formValidation()  
+{ 
+
+  
+  
+    var networkState = navigator.connection.type;
+    if (networkState == Connection.NONE)
+    {
+               
+                window.location='./first_screen.html';
+                return false;
+    }
+
+
+var username = document.getElementById("username1");
+
+var password = document.getElementById("password1");
+var pin = document.getElementById("pin1");
+
+
+    
+    
+   
+    	if(check(username.value))
+    	{
+    		
+    			if(checkpassword(password.value))
+    			{
+
+    				if(checkloginpin(pin.value))
+    					{
+    				var login_verify=makeCorsRequest_register(username.value,password.value,pin.value);
+    				if(login_verify)
+    					{return true;}
+    					else{ return false;}
+    				}
+    				
+    				else
+    				{
+    					return false;
+    				}
+    			}
+    			else
+    			{
+    				return false;
+    			}
+    	}
+    			else
+				{
+					return false;
+				}
+			
+    			
+    		
+    		
+    	
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function check(username) 
+{
+
+if (username == "") 
+{
+
+
+
+
+
+ bootbox.dialog({
+ closeButton: false,
+  message: "Please enter your Username.",
+  title: "Alert",
+  buttons: {
+    success: {
+      label: "OK",
+      className: "btn-danger",
+      callback: function() {
+  
+     
+    
+      }
+    
+    }
+    
+    
+  }
+});
+
+
+
+
+
+
+}
+else
+{
+return true;
+}
+}
+function checkpassword(password1) 
+{
+if (password1) 
+{
+
+return true;
+}
+else
+{
+
+ bootbox.dialog({
+ closeButton: false,
+  message: "Please enter your Password.",
+  title: "Alert",
+  buttons: {
+    success: {
+      label: "OK",
+      className: "btn-danger",
+      callback: function() {
+  
+     
+    
+      }
+    
+    }
+    
+    
+  }
+});
+
+}
+}
+
+function checkloginpin(loginpin1) 
+{
+
+//var loginpin = /^\d{4}$/; 
+var loginpin = /^(?!(.)\1{3})(?!0123|1234|2345|3456|4567|5678|6789|7890|0987|9876|8765|7654|6543|5432|4321|3210)\d{4}$/; 
+
+if (loginpin.test(loginpin1)) 
+{
+
+return true;
+}
 else
 {
 if(loginpin1=="")
 {
-		$('#button').html('Loading...');
-		$('#button').prop('disabled', false);
-		 $('#registrationcode1').prop('disabled', false);
-	
-		$('#button').html('Log-In');
 	bootbox.dialog({
 	closeButton: false,
-        	message: "Please enter your Log-In PIN.",
-        	title: "Alert",
-        	buttons: {
-        	success: {
-        	label: "OK",
-        	className: "btn-danger",
-        	callback: function() {
-        					  
-        	}
-        }
-        					    
+  message: "Please enter Log-In PIN.",
+  title: "Alert",
+  buttons: {
+    success: {
+      label: "OK",
+      className: "btn-danger",
+      callback: function() {
+  
+     
+    
+      }
+    
     }
+    
+    
+  }
 });
 }
 else{
-		$('#button').html('Loading...');
-		$('#button').prop('disabled', false);
-		 $('#registrationcode1').prop('disabled', false);
-	
-		$('#button').html('Log-In');  
-		bootbox.dialog({
-		closeButton: false,
-        	message: "Please enter your 4 digit Log-In PIN.",
-        	title: "Alert",
-        	buttons: {
-        	success: {
-        	label: "OK",
-        	className: "btn-danger",
-        	callback: function() {
-        					  
-        	}
-        }
-        					    
+ bootbox.dialog({
+ closeButton: false,
+  message: "The Log-In PIN must contain 4 digits. Please do not use same 4 digits or sequential digits.",
+  title: "Alert",
+  buttons: {
+    success: {
+      label: "OK",
+      className: "btn-danger",
+      callback: function() {
+  
+     
+    
+      }
+    
     }
+    
+    
+  }
 });
-
-}				return false;
-
 }
 }
 }
-
-function validate(){
-        x=document.myForm
-        txt=x.go.value
-        if (txt>=1 && txt<=4) {
-            return true
-        }else{
-           
-            return false
-        }
-}
-
-
-
-function calcTime(city, offset) {
-
-    // create Date object for current location
-    d = new Date();
-    
-    // convert to msec
-    // add local time zone offset 
-    // get UTC time in msec
-    utc = d.getTime() + (d.getTimezoneOffset() * 60000);
-    
-    // create new Date object for different city
-    // using supplied offset
-    nd = new Date(utc + (3600000*offset));
-    
-    // return time as a string
-    //return "The local time in " + city + " is " + nd.toLocaleString();
-     return nd.toLocaleString();
 }
 
