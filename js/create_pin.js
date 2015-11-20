@@ -17,6 +17,7 @@ function onBackKeyDown(e) {
 
 function success(uuid)		
 {		
+    alert('load-1-'+uuid);
      device1 = {uuid:uuid,device_model:"",device_platform:"",device_version:""};
      create_pin_page();
 };		
@@ -30,6 +31,7 @@ function fail(uuid)
     }
     function create_pin_page(){
     			
+                            alert('load-2');
     document.addEventListener("backbutton", onBackKeyDown, false);
     var element = document.getElementById('deviceProperties');
 
