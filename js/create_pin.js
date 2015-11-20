@@ -36,7 +36,7 @@ function fail(uuid)
 
  
        var device_uuid = device1.uuid;
-           
+           alert(device_uuid);
 document.getElementById('device_uuid').value=device_uuid;
 
     var networkState = navigator.connection.type;
@@ -183,6 +183,7 @@ document.getElementById('device_uuid').value=device_uuid;
     }
     else
     {
+    	alert('in');
 		var new_device_pin=$('input#new_device_pin').val();
 		var confirm_device_pin=$('input#confirm_device_pin').val();
 		var device_uuid = device1.uuid;
