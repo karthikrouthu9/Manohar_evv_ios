@@ -1,6 +1,6 @@
 $(document).ready(function(){
 				
-
+alert('start');
     document.addEventListener("deviceready",onDeviceReady,false);       
 });
 
