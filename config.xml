@@ -70,7 +70,7 @@
 <gap:plugin name="org.apache.cordova.dialogs" />
 <gap:plugin name="org.apache.cordova.splashscreen" />
 <gap:plugin name="hu.dpal.phonegap.plugins.uniquedeviceid"/>
-
+<gap:plugin name="cordova.plugins.diagnostic" source="npm" />
 
 
 	<feature name="http://api.phonegap.com/1.0/device"/>
