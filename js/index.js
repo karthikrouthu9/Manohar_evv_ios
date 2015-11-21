@@ -11,7 +11,7 @@
 	zone=v.match(/\((.*?)\)/)[1];
 	alert("zone"+zone);*/
 	
-	
+	alert("Document Ready");
 	
     document.addEventListener("deviceready",onDeviceReady,false);     
 
@@ -46,6 +46,14 @@ function fail(uuid)
     
     
 		function onDeviceReady() {
+			alert("Device Ready");
+			cordova.plugins.diagnostic.isLocationEnabledSetting(function(enabled){
+				alert("Success Function of Gps");
+    console.log("Location setting is " + (enabled ? "enabled" : "disabled"));
+}, function(error){
+	alert("Error Function Of Gps");
+    console.error("The following error occurred: "+error);
+});
                        window.plugins.uniqueDeviceID.get(success, fail);
     }
     function index_page(){
