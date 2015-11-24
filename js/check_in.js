@@ -456,7 +456,7 @@ if(patient_availability_status)
 			else
 				sizedWindowWidth = sizedWindowWidth - 50;
 			 
-			 $("#canvas").width(200);
+			 $("#canvas").width(230);
 			 $("#canvas").height(125);
 			 $("#canvas").css("border","1px solid #000");
 			
