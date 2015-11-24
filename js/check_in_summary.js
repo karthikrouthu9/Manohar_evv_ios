@@ -153,15 +153,33 @@ function fail(uuid)
  
  
  var json = data;
- 
+ /*
  var patient_name = json.checkin_data[0].patient_name;
  var visit_type = json.checkin_data[0].visit_type;
  var scheduled_time = json.checkin_data[0].sch_start_timestamp+' - '+json.patientdata[0].sch_end_timestamp;
-
+*/
   //$("#checked_in_time").val(json.checkin_data[0].checked_in_time);
 	
  
-  	  
+  	devicesec=deviceMobileTime();
+ 
+ var  server_time= $('#server_time').val();
+ 
+ 
+ 
+ var devicesec=hmsToSecondsOnly(devicesec);
+ 
+ var server_time=hmsToSecondsOnly(server_time);
+ 
+ 
+ if(devicesec-server_time>180 || devicesec-server_time<0)
+	{
+	  $('#hidden_timecheck').val('1');
+	   $('#duration_time_temp').html('Improper Time');
+	   $('#time1').html('Improper Time'); 
+	$("#proceed_to_check_out").prop('disabled', true);
+		  
+	}  
 }
 
 });
@@ -214,6 +232,37 @@ function fail(uuid)
 		
 		function date() {
 			
+			
+						var devicesec=deviceMobileTime();
+			 
+			 var  server_time= $('#server_time').val();
+			 
+			 
+			 var devicesec=hmsToSecondsOnly(devicesec);
+			 
+			 var server_time=hmsToSecondsOnly(server_time);
+			 
+			 
+			 if(devicesec-server_time>180 || devicesec-server_time<0)
+				{
+				 
+				  $('#hidden_timecheck').val('1');
+				  $('#duration_time_temp').html('Improper Time'); 
+				  $('#time1').html('Improper Time'); 
+				  $("#proceed_to_check_out").prop('disabled', true);
+				  
+				}
+				else{
+					var  check= $('#hidden_timecheck').val();
+					 if(check!=1)
+				{
+						 
+					
+					
+					//$("#proceed_to_check_out").prop('disabled', false);
+			
+			
+			
     var time = new Date();
     var hours = addZero(time.getHours());
     var minutes = addZero(time.getMinutes());
@@ -228,16 +277,35 @@ function fail(uuid)
     if(checked_in_time_temp!='')
      {
     	
-     var d1 = new Date(checked_in_time_temp);
+     var checked_in_time_temp = new Date(checked_in_time_temp);;
+        var curr_date_checked_in_time_temp = checked_in_time_temp.getDate();
+        var curr_month_checked_in_time_temp = checked_in_time_temp.getMonth()+1;
+        var curr_year_checked_in_time_temp = checked_in_time_temp.getFullYear();
+        var d1 = '' + curr_year_checked_in_time_temp  + ' ' + curr_month_checked_in_time_temp + ' ' + curr_date_checked_in_time_temp+ ' ' +checked_in_time_temp.getHours() + ':' +checked_in_time_temp.getMinutes() ;
+        var d1 = new Date(d1);
+    	
    	
             
   // Do your operations
    
   //End Time
   var d2 = new Date();
-  //x=d1.getTime() - d2.getTime();
-   x=d2.getTime() - d1.getTime();
   
+  
+  var mydate = new Date();
+  var curr_date = mydate.getDate();
+  var curr_month = mydate.getMonth()+1;
+  var curr_year = mydate.getFullYear();
+  var mydatestr = '' + curr_year  + ' ' +
+  curr_month + ' ' + 
+  curr_date+ ' ' +
+  mydate.getHours() + ':' +
+  mydate.getMinutes() ;
+var d3 = new Date(mydatestr);
+
+  //x=d1.getTime() - d2.getTime();
+  // x=d2.getTime() - d1.getTime();
+   x=d3.getTime() - d1.getTime();
   //Time difference in milli seconds
  // document.write("Your Operation took  " + (d2.getTime() - d1.getTime()) + " milliseconds");
    checkintimediff=msToTime(x);
@@ -252,19 +320,12 @@ function fail(uuid)
 	   
 	   $('#duration_time_temp').html('Improper Timezone');
     }
-   devicesec=deviceMobileTime();
-   var  server_time= $('#server_time').val();
- 
-   var devicesec=hmsToSecondsOnly(devicesec);
-   var server_time=hmsToSecondsOnly(server_time);
-   
-   
-   if(devicesec-server_time>180)
-	{
-	  
-	   $('#duration_time_temp').html('Improper Time'); 
-	}
+  
      }
+	 }
+	 }
+	 
+	 
    
 }
 		function addZero(i) {
@@ -436,6 +497,9 @@ document.getElementById("diff").value = diff(start, end);
 function exitFromApp()
 {
 	$(".proceed_to_check_out_button").prop('disabled', true);
+	 $('#hidden_timecheck').val('1');
+	  document.getElementsByClassName("show_schedules_button").disabled = true;
+	
 	$(".show_schedules_button").prop('disabled', true);
 	$(".exit_app").prop('disabled', true);
 
