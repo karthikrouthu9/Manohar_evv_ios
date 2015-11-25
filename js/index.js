@@ -46,16 +46,9 @@ function fail(uuid)
     
 		function onDeviceReady() {
 			alert("Device Ready");
-			var options =  { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true };
-			navigator.geolocation.getCurrentPosition(ShowPosition, ShowError, options);
-			
-			/*.plugins.diagnostic.isLocationEnabledSetting(function(enabled){
-				alert("Success Function of Gps");
-    
-}, function(error){
-	alert("Error Function Of Gps");
-   
-});*/
+		GPSLocation.getCurrentPosition(geolocationSuccess,
+                                         [geolocationError],
+                                         [geolocationOptions]);
                        window.plugins.uniqueDeviceID.get(success, fail);
     }
     function index_page(){
@@ -213,30 +206,21 @@ function fail(uuid)
     			
 
 
+var onSuccess = function(position) {
+    alert('Latitude: '          + position.coords.latitude          + '\n' +
+          'Longitude: '         + position.coords.longitude         + '\n' +
+          'Altitude: '          + position.coords.altitude          + '\n' +
+          'Accuracy: '          + position.coords.accuracy          + '\n' +
+          'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+          'Heading: '           + position.coords.heading           + '\n' +
+          'Speed: '             + position.coords.speed             + '\n' +
+          'Timestamp: '         + position.timestamp                + '\n');
+};
 
-
-function ShowPosition(position) {
-   
-  alert("Gps Enabled");
-			    
-			}
-		 function ShowError(error) {
-		 
-		 alert("Gps disabled");
-	
-		 
-		 }
-
-
-
-
-
-
-
-
-
-
-
-
-
+// onError Callback receives a PositionError object
+//
+function onError(error) {
+    alert('code: '    + error.code    + '\n' +
+          'message: ' + error.message + '\n');
+}
 
