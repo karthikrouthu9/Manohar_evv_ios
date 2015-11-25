@@ -2,7 +2,6 @@
 		
 /*	alert("Doc Ready First");
 	
-	
 	var date = new Date();
 	alert("time zones"+date.toTimeString());
 	var removev=date.toTimeString();
