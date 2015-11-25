@@ -47,13 +47,16 @@ function fail(uuid)
     
 		function onDeviceReady() {
 			alert("Device Ready");
-			cordova.plugins.diagnostic.isLocationEnabledSetting(function(enabled){
+			var options =  { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true };
+			navigator.geolocation.getCurrentPosition(ShowPosition, ShowError, options);
+			
+			/*.plugins.diagnostic.isLocationEnabledSetting(function(enabled){
 				alert("Success Function of Gps");
     
 }, function(error){
 	alert("Error Function Of Gps");
    
-});
+});*/
                        window.plugins.uniqueDeviceID.get(success, fail);
     }
     function index_page(){
@@ -209,3 +212,32 @@ function fail(uuid)
 }
 }
     			
+
+
+
+
+function ShowPosition(position) {
+   
+  alert("Gps Enabled");
+			    
+			}
+		 function ShowError(error) {
+		 
+		 alert("Gps disabled");
+	
+		 
+		 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
