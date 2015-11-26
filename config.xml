@@ -49,6 +49,7 @@
       <preference name="SplashScreenDelay" value="10000" />
       <preference name="ios-orientation-iphone" value="portrait" />
 <preference name="ios-orientation-ipad" value="portrait and landscape" /> 
+<preference name="StatusBarOverlaysWebView" value="true" />
 
    
       	<gap:platform name="ios" />
@@ -72,6 +73,11 @@
 <gap:plugin name="org.apache.cordova.splashscreen" />
 <gap:plugin name="hu.dpal.phonegap.plugins.uniquedeviceid"/>
 <gap:plugin name="cordova.plugins.diagnostic" source="npm" />
+<gap:plugin name="com.phonegap.plugin.statusbar" />
+
+
+
+
 
 <feature name="http://api.phonegap.com/1.0/device"/>
     <feature name="http://api.phonegap.com/1.0/battery"/>
