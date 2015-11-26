@@ -277,13 +277,8 @@ function fail(uuid)
    var  checked_in_time_temp= $('#checked_in_time_dur').val();
     if(checked_in_time_temp!='')
      {
-	 alert(checked_in_time_temp+'--d1--');
-
-	         var d1_2 = new Date();
-			 
-     alert(d1_2+'--d1--');
-    
-	
+	 alert(checked_in_time_temp+'--loc  101--');
+    	
      var checked_in_time_temp = new Date(checked_in_time_temp);;
         var curr_date_checked_in_time_temp = checked_in_time_temp.getDate();
         var curr_month_checked_in_time_temp = checked_in_time_temp.getMonth()+1;
@@ -314,8 +309,8 @@ function fail(uuid)
 var d3 = new Date(mydatestr);
 
 
-alert(d3+' -- '+d1);
-alert(d3.getTime()+' -- '+d1.getTime());
+alert(d3+' -- '+d1+'--loc  102--');
+alert(d3.getTime()+' -- '+d1.getTime()+'--loc  102--');
 
 
   //x=d1.getTime() - d2.getTime();
