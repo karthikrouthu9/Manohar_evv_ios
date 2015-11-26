@@ -14,16 +14,11 @@
     //
     function onDeviceReady() {
       alert("Device Ready");
-        cordova.plugins.diagnostic.isLocationAuthorized(function(enabled){
-    alert("Location Authorized Success");
-    
-    cordova.plugins.diagnostic.isLocationEnabledSetting(function(enabled){
-    alert("Location Enabled Success");
+   
+   cordova.plugins.diagnostic.isLocationEnabledSetting(function(enabled){
+    alert("succuess");
 }, function(error){
-   alert("Location Enabled failure");
-});
-}, function(error){
-    alert("Location Authorized failure");
+    alert("error");
 });
     }
 
