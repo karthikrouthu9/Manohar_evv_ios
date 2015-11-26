@@ -277,6 +277,7 @@ function fail(uuid)
    var  checked_in_time_temp= $('#checked_in_time_dur').val();
     if(checked_in_time_temp!='')
      {
+	 alert(checked_in_time_temp+'--d1--');
     	
      var checked_in_time_temp = new Date(checked_in_time_temp);;
         var curr_date_checked_in_time_temp = checked_in_time_temp.getDate();
@@ -284,7 +285,7 @@ function fail(uuid)
         var curr_year_checked_in_time_temp = checked_in_time_temp.getFullYear();
         var d1 = '' + curr_year_checked_in_time_temp  + ' ' + curr_month_checked_in_time_temp + ' ' + curr_date_checked_in_time_temp+ ' ' +checked_in_time_temp.getHours() + ':' +checked_in_time_temp.getMinutes() ;
 
-alert(checked_in_time_temp+'--d1--');
+
 
         var d1 = new Date(d1);
     	
