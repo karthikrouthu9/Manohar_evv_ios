@@ -278,7 +278,12 @@ function fail(uuid)
     if(checked_in_time_temp!='')
      {
 	 alert(checked_in_time_temp+'--d1--');
-    	
+
+	         var d1_2 = new Date();
+			 
+     alert(d1_2+'--d1--');
+    
+	
      var checked_in_time_temp = new Date(checked_in_time_temp);;
         var curr_date_checked_in_time_temp = checked_in_time_temp.getDate();
         var curr_month_checked_in_time_temp = checked_in_time_temp.getMonth()+1;
