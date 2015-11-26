@@ -165,7 +165,8 @@ function fail(uuid)
  
  var  server_time= $('#server_time').val();
  
- 
+ alert("Devicesec"+devicesec);
+ alert("server time"+server_time);
  
  var devicesec=hmsToSecondsOnly(devicesec);
  
