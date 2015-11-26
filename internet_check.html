@@ -14,28 +14,19 @@
     //
     function onDeviceReady() {
       alert("Device Ready");
-        navigator.geolocation.getCurrentPosition(onSuccess, onError);
-    }
-
-    // onSuccess Geolocation
-    //
-    function onSuccess(position) {
-      alert("Success Function");
         cordova.plugins.diagnostic.isLocationAuthorized(function(enabled){
-          alert("Success Function In Plugin");
+    alert("Location Authorized Success");
     
+    cordova.plugins.diagnostic.isLocationEnabledSetting(function(enabled){
+    alert("Location Enabled Success");
 }, function(error){
-    alert("Failure Function in plugin");
+   alert("Location Enabled failure");
+});
+}, function(error){
+    alert("Location Authorized failure");
 });
     }
 
-    // onError Callback receives a PositionError object
-    //
-    function onError(error) {
-      alert("Error Function");
-        alert('code: '    + error.code    + '\n' +
-                'message: ' + error.message + '\n');
-    }
 
     </script>
   </head>
