@@ -277,11 +277,11 @@ function fail(uuid)
    var  checked_in_time_temp= $('#checked_in_time_dur').val();
     if(checked_in_time_temp!='')
      {
-	 alert(checked_in_time_temp+'--loc  101--');
-    	checked_in_time_temp="'"+checked_in_time_temp+"'";
+      var data_501 ="2015-03-25T12:00:00";
+  	 alert(checked_in_time_temp+'--loc  101--'+data_501);
      var checked_in_time_temp = new Date(checked_in_time_temp);;
     
-	var d12 = new Date("2015-03-25T12:00:00");
+	var d12 = new Date(data_501);
 	
 	
  alert(d12+'--loc  102--');
@@ -317,7 +317,6 @@ function fail(uuid)
   curr_date+ 'T' +
   mydate.getHours() + ':' +
   mydate.getMinutes() ;
-
   
   
 alert(mydatestr+'--loc  105--');
