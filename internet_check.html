@@ -15,11 +15,15 @@
     function onDeviceReady() {
       alert("Device Ready");
    
-   cordova.plugins.diagnostic.isLocationEnabledSetting(function(enabled){
-    alert("succuess");
+ cordova.plugins.diagnostic.isLocationEnabled(function(enabled){
+    console.log("Location is " + (enabled ? "enabled" : "disabled"));
+    alert("Success Alert");
 }, function(error){
-    alert("error");
+    console.error("The following error occurred: "+error);
+    alert("Error Alert");
 });
+  
+  
     }
 
 
