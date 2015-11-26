@@ -283,6 +283,9 @@ function fail(uuid)
         var curr_month_checked_in_time_temp = checked_in_time_temp.getMonth()+1;
         var curr_year_checked_in_time_temp = checked_in_time_temp.getFullYear();
         var d1 = '' + curr_year_checked_in_time_temp  + ' ' + curr_month_checked_in_time_temp + ' ' + curr_date_checked_in_time_temp+ ' ' +checked_in_time_temp.getHours() + ':' +checked_in_time_temp.getMinutes() ;
+
+alert(d1+'--d1--');
+
         var d1 = new Date(d1);
     	
    	
