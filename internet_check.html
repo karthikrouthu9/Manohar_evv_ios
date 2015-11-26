@@ -21,7 +21,7 @@
     //
     function onSuccess(position) {
       alert("Success Function");
-        cordova.plugins.diagnostic.isLocationEnabled(function(enabled){
+        cordova.plugins.diagnostic.isLocationAuthorized(function(enabled){
           alert("Success Function In Plugin");
     
 }, function(error){
