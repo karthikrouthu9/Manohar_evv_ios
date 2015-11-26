@@ -732,7 +732,7 @@ function timezoneDetect(timezone)
 			else
 				sizedWindowWidth = sizedWindowWidth - 50;
 			 
-			 $("#canvas").width(299);
+			 $("#canvas").width(280);
 			 $("#canvas").height(125);
 			 $("#canvas").css("border","1px solid #000");
 			
