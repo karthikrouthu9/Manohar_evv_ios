@@ -75,7 +75,7 @@
 <gap:plugin name="cordova.plugins.diagnostic" source="npm" />
 <gap:plugin name="com.phonegap.plugin.statusbar" />
 <plugin name="org.apache.cordova.statusbar" spec="0.1.4" source="pgb" />
-<plugin name="Geolocation" value="CDVLocation" />
+<plugin name="org.apache.cordova.geolocation" spec="0.3.2" source="pgb" />
 
 
 
