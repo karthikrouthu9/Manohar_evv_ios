@@ -312,11 +312,12 @@ function fail(uuid)
   var curr_date = mydate.getDate();
   var curr_month = mydate.getMonth()+1;
   var curr_year = mydate.getFullYear();
-  var mydatestr = '' + curr_year  + ' ' +
-  curr_month + ' ' + 
-  curr_date+ ' ' +
+  var mydatestr = '' + curr_year  + '-' +
+  curr_month + '-' + 
+  curr_date+ 'T' +
   mydate.getHours() + ':' +
   mydate.getMinutes() ;
+
   
   
 alert(mydatestr+'--loc  105--');
