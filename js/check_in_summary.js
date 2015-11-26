@@ -242,7 +242,8 @@ function fail(uuid)
 			 var devicesec=hmsToSecondsOnly(devicesec);
 			 
 			 var server_time=hmsToSecondsOnly(server_time);
-			 
+			 alert("devicesec after converting"+devicesec);
+			 alert("server_time after converting"+server_time);
 			 
 			 if(devicesec-server_time>180 || devicesec-server_time<0)
 				{
