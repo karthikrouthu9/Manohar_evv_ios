@@ -279,9 +279,9 @@ function fail(uuid)
      {
 	 alert(checked_in_time_temp+'--loc  101--');
     	
-     var checked_in_time_temp = new Date(checked_in_time_temp.getTime());;
+     var checked_in_time_temp = new Date(checked_in_time_temp);;
     
- alert(checked_in_time_temp+'--loc  102--');
+ alert(checked_in_time_temp.getTime()+'--loc  102--');
     
 	
     var curr_date_checked_in_time_temp = checked_in_time_temp.getDate();
