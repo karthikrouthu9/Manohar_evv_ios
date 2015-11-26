@@ -49,7 +49,7 @@
       <preference name="SplashScreenDelay" value="10000" />
       <preference name="ios-orientation-iphone" value="portrait" />
 <preference name="ios-orientation-ipad" value="portrait and landscape" /> 
-<preference name="StatusBarOverlaysWebView" value="true" />
+<preference name="StatusBarOverlaysWebView" value="false" />
 
    
       	<gap:platform name="ios" />
