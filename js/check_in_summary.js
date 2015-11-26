@@ -236,10 +236,9 @@ function fail(uuid)
 		function date() {
 			
 			
-						var devicesec=deviceMobileTime();
+			 var devicesec=deviceMobileTime();
 			 
 			 var  server_time= $('#server_time').val();
-			 
 			 
 			 var devicesec=hmsToSecondsOnly(devicesec);
 			 
@@ -305,9 +304,16 @@ function fail(uuid)
   mydate.getMinutes() ;
 var d3 = new Date(mydatestr);
 
+
+alert(d3+' -- '+d1);
+alert(d3.getTime()+' -- '+d1.getTime());
+
+
   //x=d1.getTime() - d2.getTime();
   // x=d2.getTime() - d1.getTime();
    x=d3.getTime() - d1.getTime();
+   
+alert(x);
   //Time difference in milli seconds
  // document.write("Your Operation took  " + (d2.getTime() - d1.getTime()) + " milliseconds");
    checkintimediff=msToTime(x);
