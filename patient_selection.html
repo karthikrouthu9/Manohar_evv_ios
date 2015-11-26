@@ -75,7 +75,7 @@ function success(uuid)
 
 
      device1 = {uuid:uuid,device_model:"",device_platform:"",device_version:""};
- 	alert(device1.uuid);
+ 	//alert(device1.uuid);
 	  patient_selection_function();
 };		
 
@@ -94,7 +94,7 @@ function fail(uuid)
 	 }	 
 	function patient_selection_function() {
 	
-	alert(device1.uuid);
+	//alert(device1.uuid);
 var onclick_id='';
 
 
@@ -163,7 +163,7 @@ var onclick_id='';
         xhr.setRequestHeader(header, token);
     });
 	
-	alert(device1.uuid);
+	//alert(device1.uuid);
             $.ajax({
               url: 'http://183.82.96.212:8080/m_service/m_resources/get_schedules',
               type: "POST",
