@@ -281,7 +281,12 @@ function fail(uuid)
     	checked_in_time_temp="'"+checked_in_time_temp+"'";
      var checked_in_time_temp = new Date(checked_in_time_temp);;
     
- alert(checked_in_time_temp+'--loc  102--');
+	var d12 = new Date("January 25 2015");
+	
+	
+ alert(d12+'--loc  102--');
+    
+ alert(checked_in_time_temp+'--loc  102102--');
     
 	
     var curr_date_checked_in_time_temp = checked_in_time_temp.getDate();
