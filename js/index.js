@@ -10,7 +10,7 @@
 	zone=v.match(/\((.*?)\)/)[1];
 	alert("zone"+zone);*/
 	
-	alert("Document Ready");
+	
 	
     document.addEventListener("deviceready",onDeviceReady,false);     
 
@@ -45,7 +45,7 @@ function fail(uuid)
     
     
 		function onDeviceReady() {
-			alert("Device Ready");
+		
 	
 	cordova.plugins.diagnostic.isLocationEnabledSetting(function(enabled){
 		alert("Gps enabled");
