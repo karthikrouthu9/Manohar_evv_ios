@@ -68,7 +68,7 @@ function fail(uuid)
         			      className: "btn-danger",
         			      callback: function() {
         			    	  
-        			    	  exit_app();
+        			    	 window.location='./server_not_available.html';
         			      }
         			    
         			    }
@@ -111,7 +111,7 @@ function fail(uuid)
 		      className: "btn-danger",
 		      callback: function() {
 		  
-		     
+		     	window.location='./server_not_available.html';
 		    
 		      }
 		    
