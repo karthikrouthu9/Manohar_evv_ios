@@ -319,8 +319,16 @@ var d3 = new Date(mydatestr);
 	
 			var d3 = moment().format("YYYY-MM-DD HH:mm");
 
+			
+			
+			
 alert(d1+' **** '+d3);
 alert('loc 102hhh');
+
+alert("Before");
+var y=moment('2009-07-15 00:00:00').unix();
+alert('loc 105 y '+ y);
+
 var x=d3.unix();
 var y=moment('2009-07-15 00:00:00').unix();
 alert(x+' xxxx' + y);
