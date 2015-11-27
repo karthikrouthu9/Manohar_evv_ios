@@ -40,6 +40,41 @@ function fail(uuid)
     {
     	
 
+
+
+alert("In else loop");
+
+(function ($) {
+    $.fn.maxlength = function (length) {
+        return this.on('keydown', function () {
+            alert("karthik");
+            var maxlength = length || parseInt($(this).attr('maxlength'), 10) ;
+            if (maxlength && $(this).val().length >= maxlength) {
+                $(this).val($(this).val().slice(0, maxlength - 1));
+            }
+        });
+    };
+}($));
+
+$('input[type="number"]').maxlength();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     	
 	var sch_uuid = getURLParameters('sch_uuid');
 	sch_uuid=sch_uuid;
