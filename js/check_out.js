@@ -43,7 +43,7 @@ function fail(uuid)
 
 
 
-$('input[type="number"]').keypress(function( event ){
+$('#exampleInputexpenses1').keypress(function( event ){
     var key = event.which;
     var value = $(this).val();
    
@@ -56,7 +56,7 @@ $('input[type="number"]').keypress(function( event ){
         event.preventDefault();
 });
 
-$('input[type="number"]').keypress(function( event ){
+$('#exampleInputmileage1').keypress(function( event ){
     var key = event.which;
     var value = $(this).val();
    
