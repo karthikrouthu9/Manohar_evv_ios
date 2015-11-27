@@ -235,7 +235,9 @@ function fail(uuid)
 		
 		function date() {
 			
-			
+			alert('loc 101');
+			var now = moment();
+			alert(now);
 			 var devicesec=deviceMobileTime();
 			 
 			 var  server_time= $('#server_time').val();
