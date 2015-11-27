@@ -73,7 +73,7 @@ function fail(uuid)
         			      className: "btn-danger",
         			      callback: function() {
         			    	  
-        			    	  exit_app();
+        			    	  	window.location='./patient_selection.html';
         			      }
         			    
         			    }
@@ -174,7 +174,7 @@ for (var i = 0; i < data.emails.length; ++i) {
         			      className: "btn-danger",
         			      callback: function() {
         			    	  
-        			    	  exit_app();
+        			    	 	window.location='./patient_selection.html';
         			      }
         			    
         			    }
@@ -239,7 +239,7 @@ for (var i = 0; i < data.emails.length; ++i) {
        				      className: "btn-danger",
        				      callback: function() {
        				  
-       				    	exit_app();
+       				    		window.location='./patient_selection.html';
        				    
        				      }
        				    
@@ -469,7 +469,7 @@ for (var i = 0; i < data.emails.length; ++i) {
         			      className: "btn-danger",
         			      callback: function() {
         			    	  
-        			    	  exit_app();
+        			    	 	window.location='./patient_selection.html';
         			      }
         			    
         			    }
@@ -731,7 +731,7 @@ for (var i = 0; i < data.emails.length; ++i) {
         			      className: "btn-danger",
         			      callback: function() {
         			    	  
-        			    	  exit_app();
+        			    	  	window.location='./patient_selection.html';
         			      }
         			    
         			    }
@@ -986,7 +986,7 @@ var device_uuid = device1.uuid;
         			      className: "btn-danger",
         			      callback: function() {
         			    	  
-        			    	  exit_app();
+        			    	 	window.location='./patient_selection.html';
         			      }
         			    
         			    }
