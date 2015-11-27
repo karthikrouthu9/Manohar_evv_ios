@@ -279,51 +279,8 @@ function fail(uuid)
      {
 
 	
-			var d1 = moment(checked_in_time_temp,"YYYY-MM-DD HH:mm");
-			
-	 
-     // var checked_in_time_temp = new Date(checked_in_time_temp);;
-    
-
-	
- // var curr_date_checked_in_time_temp = checked_in_time_temp.getDate();
- //  var curr_month_checked_in_time_temp = checked_in_time_temp.getMonth()+1;
- // var curr_year_checked_in_time_temp = checked_in_time_temp.getFullYear();
- //   var d1 = '' + curr_year_checked_in_time_temp  + '-' + curr_month_checked_in_time_temp + '-' +  curr_date_checked_in_time_temp+ ' ' +checked_in_time_temp.getHours() + ':' +checked_in_time_temp.getMinutes() ;
-
-
- 
-    //    var d1 = new Date(d1);
-    	
-			   	
-            
-  // Do your operations
-   
-  //End Time
-  var d2 = new Date();
-  
-  
-  var mydate = new Date();
-  var curr_date = mydate.getDate();
-  var curr_month = mydate.getMonth()+1;
-  var curr_year = mydate.getFullYear();
-  var mydatestr = '' + curr_year  + '-' +
-  curr_month + '-' + 
-  curr_date+ ' ' +
-  mydate.getHours() + ':' +
-  mydate.getMinutes() ;
-  
-  
-var d3 = new Date(mydatestr);
-
-	
-			var d3 = moment();
-
-			
-			
-			
-alert(d1+' **** '+d3);
-
+var d1 = moment(checked_in_time_temp,"YYYY-MM-DD HH:mm");
+var d3 = moment();
  var a=d3.diff(d1);
 
   //Time difference in milli seconds
