@@ -139,7 +139,7 @@ var networkState = navigator.connection.type;
         			      className: "btn-danger",
         			      callback: function() {
         			    	  
-        			    	  onBackKeyDown();
+        			    	 	window.location='./patient_selection.html';
         			      }
         			    
         			    }
