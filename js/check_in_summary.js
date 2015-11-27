@@ -320,7 +320,9 @@ var d3 = new Date(mydatestr);
 			var d3 = moment().format("YYYY-MM-DD HH:mm");
 
 alert(d1+' **** '+d3);
-
+x=d3.diff(d1);
+y=d1.diff(d3);
+alert(x+' **** '+y);
 
   //x=d1.getTime() - d2.getTime();
   // x=d2.getTime() - d1.getTime();
