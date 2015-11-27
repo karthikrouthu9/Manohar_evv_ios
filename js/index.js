@@ -189,9 +189,9 @@ function fail(uuid)
 							if(data.is_security_question_answered==1 && data.logindata[0].count>=1)
       {
    
-    window.location='./internet_check.html';
+    //window.location='./internet_check.html';
      
-     // window.location='./log-in.html';
+      window.location='./log-in.html';
       return false;
       }
       else if(data.is_security_question_answered==0 && data.logindata[0].count>=1)
