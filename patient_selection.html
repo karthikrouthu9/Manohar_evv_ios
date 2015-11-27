@@ -379,13 +379,9 @@ $('#collapse2').on('.panel-collapse.collapse.in'), function() {
 		 function ShowError(error) {
 		 alert("Error Function");
 		 alert("Before plugin");
-//	cordova.plugins.diagnostic.isLocationEnabledSetting(successCallback, errorCallback);
+	cordova.plugins.diagnostic.switchToLocationSettings(successCallback, errorCallback);
 		 
-		 cordova.plugins.diagnostic.isLocationEnabledSetting(function(enabled){
-    console.log("Location setting is " + (enabled ? "enabled" : "disabled"));
-}, function(error){
-    console.error("The following error occurred: "+error);
-});
+	
 		 
 		 $(".checkin_button").prop('disabled', false);
 		//$(".checkin_button").removeAttr('disabled');
@@ -400,7 +396,7 @@ $('#collapse2').on('.panel-collapse.collapse.in'), function() {
 		 }
 		 
 		 
-	/*	 function successCallback()
+		 function successCallback()
 		 {
 		 	alert("Success Call back");
 		 }
@@ -409,7 +405,7 @@ $('#collapse2').on('.panel-collapse.collapse.in'), function() {
 		 {
 		 	alert("Error Callback");
 		 }
-		 */
+		 
 		 
 		 
         </script>
