@@ -55,6 +55,33 @@ function fail(uuid)
     else
     {
     	
+    	$('#expenses1').keypress(function( event ){
+    var key = event.which;
+    var value = $(this).val();
+   
+   if( value.length > 7 )
+   {
+   
+   	event.preventDefault();
+   }
+    if( ! ( key >= 48 && key <= 57 ) && key !=46)
+        event.preventDefault();
+});
+
+$('#mileage1').keypress(function( event ){
+    var key = event.which;
+    var value = $(this).val();
+   
+   if( value.length > 5 )
+   {
+   
+   	event.preventDefault();
+   }
+    if( ! ( key >= 48 && key <= 57 ) && key !=46)
+        event.preventDefault();
+});
+    	
+    	
 		var visit_uuid = getURLParameters('visit_uuid');
 		var visit_type_id = getURLParameters('visit_type_id');
 		var patient_uuid = getURLParameters('patient_uuid');
