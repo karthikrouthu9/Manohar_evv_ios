@@ -241,15 +241,15 @@ sec = ("0" + sec).slice(-2);
 var d3 = moment();
  var a=d3.diff(d1);
 
-
-       
+alert("A Value String");
+       alert("A Value"+a);
              
      // Do your operations
       
      //End Time
-     var d2 = new Date();
+     //var d2 = new Date();
      //x=d1.getTime() - d2.getTime();
-      x=d2.getTime() - d1.getTime();
+     // x=d2.getTime() - d1.getTime();
      
      //Time difference in milli seconds
     // document.write("Your Operation took  " + (d2.getTime() - d1.getTime()) + " milliseconds");
