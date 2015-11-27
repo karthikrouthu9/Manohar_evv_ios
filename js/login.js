@@ -249,7 +249,7 @@ var loginpin = /^\d{4}$/;
 	        			      className: "btn-danger",
 	        			      callback: function() {
 	        			    	  
-	        			    	 	window.location='./patient_selection.html';
+	        			    	 window.location='./server_not_available.html';
 	        			      }
 	        			    
 	        			    }
@@ -313,7 +313,7 @@ var loginpin = /^\d{4}$/;
         			      className: "btn-danger",
         			      callback: function() {
         			    	  
-        			    	 	window.location='./patient_selection.html';
+        			    	 window.location='./server_not_available.html';
         			      }
         			    
         			    }
@@ -357,7 +357,7 @@ var loginpin = /^\d{4}$/;
 		      className: "btn-danger",
 		      callback: function() {
 		  
-		    	  	window.location='./patient_selection.html';
+		    	  window.location='./server_not_available.html';
 		    
 		      }
 		    
