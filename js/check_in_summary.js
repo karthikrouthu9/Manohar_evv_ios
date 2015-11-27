@@ -279,7 +279,7 @@ function fail(uuid)
      {
 
 	
-			var d1 = moment(checked_in_time_temp);
+			var d1 = moment(checked_in_time_temp,"YYYY-MM-DD HH:mm");
 			
 	 
      // var checked_in_time_temp = new Date(checked_in_time_temp);;
@@ -309,7 +309,7 @@ function fail(uuid)
   var curr_year = mydate.getFullYear();
   var mydatestr = '' + curr_year  + '-' +
   curr_month + '-' + 
-  curr_date+ 'T' +
+  curr_date+ ' ' +
   mydate.getHours() + ':' +
   mydate.getMinutes() ;
   
@@ -317,7 +317,7 @@ function fail(uuid)
 var d3 = new Date(mydatestr);
 
 	
-			var d3 = moment();
+			var d3 = moment(mydatestr);
 
 			
 			
