@@ -59,7 +59,7 @@ function fail(uuid)
     var key = event.which;
     var value = $(this).val();
    
-   if( value.length > 7 )
+   if( value.length > 6 )
    {
    
    	event.preventDefault();
@@ -72,7 +72,7 @@ $('#mileage1').keypress(function( event ){
     var key = event.which;
     var value = $(this).val();
    
-   if( value.length > 5 )
+   if( value.length > 4 )
    {
    
    	event.preventDefault();
