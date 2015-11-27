@@ -247,7 +247,7 @@ var device_version = document.getElementById("device_version");
 	        			      className: "btn-danger",
 	        			      callback: function() {
 	        			    	  
-	        			    	 	window.location='./patient_selection.html';
+	        			    	 window.location='./server_not_available.html';
 	        			      }
 	        			    
 	        			    }
@@ -392,7 +392,7 @@ var device_version = document.getElementById("device_version");
         			      className: "btn-danger",
         			      callback: function() {
         			    	  
-        			    	  	window.location='./patient_selection.html';
+        			    	  	window.location='./server_not_available.html';
         			      }
         			    
         			    }
