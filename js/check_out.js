@@ -237,8 +237,10 @@ sec = ("0" + sec).slice(-2);
     var  checked_in_time_temp= $('#checked_in_time_temp_hid').val();
     if(checked_in_time_temp!='')
      {
-      var d1 = new Date(checked_in_time_temp);
-    	
+    var d1 = moment(checked_in_time_temp,"YYYY-MM-DD HH:mm");
+var d3 = moment();
+ var a=d3.diff(d1);
+
 
        
              
@@ -251,7 +253,7 @@ sec = ("0" + sec).slice(-2);
      
      //Time difference in milli seconds
     // document.write("Your Operation took  " + (d2.getTime() - d1.getTime()) + " milliseconds");
-      checkintimediff=msToTime(x);
+      checkintimediff=msToTime(a);
       
       $('#duration_time_temp').html(checkintimediff);
       var  check_in_timestamp= $('#check_in_timestamp').val();
