@@ -86,7 +86,7 @@ function fail(uuid)
         			      className: "btn-danger",
         			      callback: function() {
         			    	  
-        			    	  exit_app();
+        			    	 	window.location='./patient_selection.html';
         			      }
         			    
         			    }
@@ -318,7 +318,7 @@ var networkState = navigator.connection.type;
         			      className: "btn-danger",
         			      callback: function() {
         			    	  
-        			    	  onBackKeyDown();
+        			    	 	window.location='./patient_selection.html';
         			      }
         			    
         			    }
