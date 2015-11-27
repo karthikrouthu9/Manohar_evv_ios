@@ -19,7 +19,22 @@
 	<script src="plugins/bootbox.js"></script>
     <script src="plugins/bootbox.min.js"></script>
  
+		<script>
 		
+		
+		(function ($) {
+    $.fn.maxlength = function (length) {
+        return this.on('keydown', function () {
+            var maxlength = length || parseInt($(this).attr('maxlength'), 10) ;
+            if (maxlength && $(this).val().length >= maxlength) {
+                $(this).val($(this).val().slice(0, maxlength - 1));
+            }
+        });
+    };
+}($));
+
+$('input[type="number"]').maxlength();
+		</script>
 
 
 	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -167,7 +182,7 @@
 
 <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6">
 	
-	<input type="text"  max="9999999" size="450px"  step="any"   pattern="(0\.((0[0-9]{1})|([0-9]{1}([0-9]{1})?)))|(([0-9]+[0-9]*)(\.([0-9]{1,2}))?)" class="form-control" id="exampleInputexpenses1" placeholder="Expenses($)"/>
+	<input type="number"  min="1" max="99999" maxlength="7" size="450px"  step="any"   pattern="(0\.((0[0-9]{1})|([0-9]{1}([0-9]{1})?)))|(([0-9]+[0-9]*)(\.([0-9]{1,2}))?)" class="form-control" id="exampleInputexpenses1" placeholder="Expenses($)"/>
 
 </div>
 
