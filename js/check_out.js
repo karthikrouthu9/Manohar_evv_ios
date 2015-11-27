@@ -48,6 +48,7 @@ $('input[type="number"]').keypress(function( event ){
     var key = event.which;
     var value = $(this).val();
    alert("Value"+value);
+   alert("Value Length"+value.length);
     if( ! ( key >= 48 && key <= 57 ) && key !=46 && value.length > 8 )
         event.preventDefault();
 });
