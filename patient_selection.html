@@ -378,27 +378,21 @@ $('#collapse2').on('.panel-collapse.collapse.in'), function() {
 			}
 		 function ShowError(error) {
 		 alert("Error Function");
-		 
-		 cordova.plugins.diagnostic.switchToSettings(function(){
-    console.log("Successfully switched to Settings app"));
-    alert("gg");
-}, function(error){
-alert("oo");
-    console.error("The following error occurred: "+error);
-});
+		 alert("Before plugin");
+	cordova.plugins.diagnostic.switchToSettings();
 		 
 		 
 		 
 		 $(".checkin_button").prop('disabled', false);
 		//$(".checkin_button").removeAttr('disabled');
 		 
-	/*	 switch(error.code) {
+		 switch(error.code) {
         
         case error.TIMEOUT:
            window.MainActivity.showSettingsAlert();
             break;
        
-    				}*/
+    				}
 		 }
         </script>
 </head>
