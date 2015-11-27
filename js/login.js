@@ -249,7 +249,7 @@ var loginpin = /^\d{4}$/;
 	        			      className: "btn-danger",
 	        			      callback: function() {
 	        			    	  
-	        			    	  onBackKeyDown();
+	        			    	 	window.location='./patient_selection.html';
 	        			      }
 	        			    
 	        			    }
@@ -313,7 +313,7 @@ var loginpin = /^\d{4}$/;
         			      className: "btn-danger",
         			      callback: function() {
         			    	  
-        			    	  exit_app();
+        			    	 	window.location='./patient_selection.html';
         			      }
         			    
         			    }
@@ -357,7 +357,7 @@ var loginpin = /^\d{4}$/;
 		      className: "btn-danger",
 		      callback: function() {
 		  
-		    	  
+		    	  	window.location='./patient_selection.html';
 		    
 		      }
 		    
