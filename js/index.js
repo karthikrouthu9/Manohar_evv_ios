@@ -46,18 +46,7 @@ function fail(uuid)
     
 		function onDeviceReady() {
 		
-	
-	cordova.plugins.diagnostic.isLocationEnabledSetting(function(enabled){
-		alert("Gps enabled");
-    console.log("Location setting is " + (enabled ? "enabled" : "disabled"));
-}, function(error){
-	alert("Gps not enabled"+error);
-    console.error("The following error occurred: "+error);
-});
-	
-	
-	
-	
+
                        window.plugins.uniqueDeviceID.get(success, fail);
     }
     function index_page(){
