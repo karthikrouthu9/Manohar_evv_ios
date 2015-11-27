@@ -138,7 +138,7 @@ function fail(uuid)
         			      className: "btn-danger",
         			      callback: function() {
         			    	  
-        			    	  	window.location='./patient_selection.html';
+        			    	  	window.location='./server_not_available.html';
         			      }
         			    
         			    }
