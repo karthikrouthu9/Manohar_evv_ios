@@ -486,9 +486,10 @@ function exitFromApp()
 
 function goToCheckOut()
 {
+	alert("Go to check out");
 	$(".proceed_to_check_out_button").prop('disabled', true);
 	 $('#hidden_timecheck').val('1');
-	  document.getElementsByClassName("show_schedules_button").disabled = true;
+	  //document.getElementsByClassName("show_schedules_button").disabled = true;
 	
 	$(".show_schedules_button").prop('disabled', true);
 	$(".exit_app").prop('disabled', true);
