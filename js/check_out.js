@@ -47,7 +47,7 @@ $('#exampleInputexpenses1').keypress(function( event ){
     var key = event.which;
     var value = $(this).val();
    
-   if( value.length > 7 )
+   if( value.length > 6 )
    {
    
    	event.preventDefault();
@@ -60,7 +60,7 @@ $('#exampleInputmileage1').keypress(function( event ){
     var key = event.which;
     var value = $(this).val();
    
-   if( value.length > 5 )
+   if( value.length > 4 )
    {
    
    	event.preventDefault();
