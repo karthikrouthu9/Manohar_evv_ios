@@ -43,21 +43,13 @@ function fail(uuid)
 
 
 alert("In else loop");
-(function ($) {
-    $.fn.maxlength = function (length) {
-        return this.on('keydown', function () {
-            alert("karthik"+parseInt($(this).attr('maxlength'), 10));
-            var maxlength = length || parseInt($(this).attr('maxlength'), 10) ;
-            alert("maxlenth = "+maxlength);
-            if (maxlength && $(this).val().length >= maxlength) {
-                alert("In IF");
-                $(this).val($(this).val().slice(0, maxlength - 1));
-            }
-        });
-    };
-}($));
 
-$('input[type="number"]').maxlength();
+$('input[type="number"]').keyup(function() {
+    var $this = $(this);
+    $this.val($this.val().replace(/[^\d.]/g, ''));        
+});
+
+
 
 
 
