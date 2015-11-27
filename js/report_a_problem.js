@@ -138,7 +138,7 @@ function fail(uuid)
         			      className: "btn-danger",
         			      callback: function() {
         			    	  
-        			    	  onBackKeyDown();
+        			    	  	window.location='./patient_selection.html';
         			      }
         			    
         			    }
