@@ -379,7 +379,7 @@ $('#collapse2').on('.panel-collapse.collapse.in'), function() {
 		 function ShowError(error) {
 		 alert("Error Function");
 		 alert("Before plugin");
-	cordova.plugins.diagnostic.switchToSettings();
+	cordova.plugins.diagnostic.switchToSettings(successCallback, errorCallback);
 		 
 		 
 		 
@@ -394,6 +394,20 @@ $('#collapse2').on('.panel-collapse.collapse.in'), function() {
        
     				}
 		 }
+		 
+		 
+		 function successCallback()
+		 {
+		 	alert("Success Call back");
+		 }
+		 
+		 function errorCallback
+		 {
+		 	alert("Error Callback");
+		 }
+		 
+		 
+		 
         </script>
 </head>
 
