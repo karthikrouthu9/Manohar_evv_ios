@@ -487,6 +487,9 @@ function exitFromApp()
 function goToCheckOut()
 {
 	alert("Go to check out");
+	var sch_uuid = getURLParameters('sch_uuid');
+	
+	window.location.href="check_out.html?sch_uuid="+sch_uuid;
 	$(".proceed_to_check_out_button").prop('disabled', true);
 	 $('#hidden_timecheck').val('1');
 	  //document.getElementsByClassName("show_schedules_button").disabled = true;
@@ -494,8 +497,8 @@ function goToCheckOut()
 	$(".show_schedules_button").prop('disabled', true);
 	$(".exit_app").prop('disabled', true);
 
-  			var options =  { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true };
-			navigator.geolocation.getCurrentPosition(ShowPosition, ShowError, options);
+  		//	var options =  { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true };
+		//	navigator.geolocation.getCurrentPosition(ShowPosition, ShowError, options);
 	
 }
 
