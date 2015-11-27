@@ -47,7 +47,7 @@ alert("In else loop");
 $('input[type="number"]').keypress(function( event ){
     var key = event.which;
     
-    if( ! ( key >= 48 && key <= 57 ) )
+    if( ! ( key >= 48 && key <= 57 ) && key !=46 )
         event.preventDefault();
 });
 
