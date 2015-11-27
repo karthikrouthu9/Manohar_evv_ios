@@ -286,10 +286,10 @@ function fail(uuid)
     
 
 	
-   // var curr_date_checked_in_time_temp = checked_in_time_temp.getDate();
-      //  var curr_month_checked_in_time_temp = checked_in_time_temp.getMonth()+1;
-       // var curr_year_checked_in_time_temp = checked_in_time_temp.getFullYear();
-     //   var d1 = '' + curr_year_checked_in_time_temp  + '-' + curr_month_checked_in_time_temp + '-' +  curr_date_checked_in_time_temp+ ' ' +checked_in_time_temp.getHours() + ':' +checked_in_time_temp.getMinutes() ;
+ // var curr_date_checked_in_time_temp = checked_in_time_temp.getDate();
+ //  var curr_month_checked_in_time_temp = checked_in_time_temp.getMonth()+1;
+ // var curr_year_checked_in_time_temp = checked_in_time_temp.getFullYear();
+ //   var d1 = '' + curr_year_checked_in_time_temp  + '-' + curr_month_checked_in_time_temp + '-' +  curr_date_checked_in_time_temp+ ' ' +checked_in_time_temp.getHours() + ':' +checked_in_time_temp.getMinutes() ;
 
 
  
@@ -317,7 +317,7 @@ function fail(uuid)
 var d3 = new Date(mydatestr);
 
 	
-			var d3 = moment(mydatestr);
+			var d3 = moment();
 
 			
 			
