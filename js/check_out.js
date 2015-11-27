@@ -241,8 +241,7 @@ sec = ("0" + sec).slice(-2);
 var d3 = moment();
  var a=d3.diff(d1);
 
-alert("A Value String");
-       alert("A Value"+a);
+
              
      // Do your operations
       
