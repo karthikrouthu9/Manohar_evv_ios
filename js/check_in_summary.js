@@ -325,33 +325,10 @@ var d3 = new Date(mydatestr);
 alert(d1+' **** '+d3);
 
  var a=d3.diff(d1);
- var b=d1.diff(d3);
 
-alert('loc 102hhh');
-
-alert(a);
-alert(b);
-
-alert("Before");
-
-var x=d3.unix();
-alert(x+' xxxx' );
-
-y=d1.unix();
-alert('loc 103');
-alert(' yyyy '+y);
-
-
-
-
-  //x=d1.getTime() - d2.getTime();
-  // x=d2.getTime() - d1.getTime();
-   x=d3.unix() - d1.unix();
-   
-alert(x);
   //Time difference in milli seconds
  // document.write("Your Operation took  " + (d2.getTime() - d1.getTime()) + " milliseconds");
-   checkintimediff=msToTime(x);
+   checkintimediff=msToTime(a);
    
    $('#duration_time_temp').html(checkintimediff);
    var  check_in_timestamp= $('#check_in_timestamp').val();
