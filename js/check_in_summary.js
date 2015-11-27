@@ -322,6 +322,9 @@ var d3 = new Date(mydatestr);
 alert(d1+' **** '+d3);
 alert('loc 102hhh');
 x=d3.unix();
+
+alert(x+' xxxx');
+
 y=d1.unix();
 alert('loc 103');
 alert(x+' +++++ '+y);
