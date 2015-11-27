@@ -232,7 +232,7 @@ document.getElementById('device_uuid').value=device_uuid;
         			      className: "btn-danger",
         			      callback: function() {
         			    	  
-        			    	  exit_app();
+        			    	  	window.location='./patient_selection.html';
         			      }
         			    
         			    }
@@ -282,7 +282,7 @@ document.getElementById('device_uuid').value=device_uuid;
 			      label: "OK",
 			      className: "btn-danger",
 			      callback: function() {
-			   
+			   	window.location='./patient_selection.html';
 			   }
 			    
 			    }
