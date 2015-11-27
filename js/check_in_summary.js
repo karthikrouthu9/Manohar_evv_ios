@@ -235,9 +235,7 @@ function fail(uuid)
 		
 		function date() {
 			
-			alert('loc 101');
-			var now = moment();
-			alert(now);
+
 			 var devicesec=deviceMobileTime();
 			 
 			 var  server_time= $('#server_time').val();
@@ -280,21 +278,27 @@ function fail(uuid)
     if(checked_in_time_temp!='')
      {
 
-
+    alert('loc 101');
+			alert(checked_in_time_temp);
+	
+	
+			var now = moment(checked_in_time_temp);
+			alert(now);
+	 
      var checked_in_time_temp = new Date(checked_in_time_temp);;
     
-    
+
 	
     var curr_date_checked_in_time_temp = checked_in_time_temp.getDate();
         var curr_month_checked_in_time_temp = checked_in_time_temp.getMonth()+1;
         var curr_year_checked_in_time_temp = checked_in_time_temp.getFullYear();
-        var d1 = '' + curr_year_checked_in_time_temp  + '-' + curr_month_checked_in_time_temp + '-' + curr_date_checked_in_time_temp+ 'T' +checked_in_time_temp.getHours() + ':' +checked_in_time_temp.getMinutes() ;
+        var d1 = '' + curr_year_checked_in_time_temp  + '-' + curr_month_checked_in_time_temp + '-' + curr_date_checked_in_time_temp+ ' ' +checked_in_time_temp.getHours() + ':' +checked_in_time_temp.getMinutes() ;
 
 
  
         var d1 = new Date(d1);
     	
-   	
+			   	
             
   // Do your operations
    
