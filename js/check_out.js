@@ -44,9 +44,11 @@ function fail(uuid)
 
 alert("In else loop");
 
-$('input[type="number"]').keyup(function() {
-    var $this = $(this);
-    $this.val($this.val().replace(/[^\d.]/g, ''));        
+$('input[type="number"]').keypress(function( event ){
+    var key = event.which;
+    
+    if( ! ( key >= 48 && key <= 57 ) )
+        event.preventDefault();
 });
 
 
