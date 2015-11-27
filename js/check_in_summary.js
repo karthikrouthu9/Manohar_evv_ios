@@ -282,7 +282,7 @@ function fail(uuid)
 			alert(checked_in_time_temp);
 	
 	
-			var now = moment(checked_in_time_temp);
+			var now = moment(checked_in_time_temp).format("YYYY-MM-DD HH:mm");
 			alert(now);
 	 
      var checked_in_time_temp = new Date(checked_in_time_temp);;
