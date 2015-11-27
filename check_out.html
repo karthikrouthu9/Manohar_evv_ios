@@ -19,23 +19,7 @@
 	<script src="plugins/bootbox.js"></script>
     <script src="plugins/bootbox.min.js"></script>
  
-		<script>
-		
-		
-		(function ($) {
-    $.fn.maxlength = function (length) {
-        return this.on('keydown', function () {
-            var maxlength = length || parseInt($(this).attr('maxlength'), 10) ;
-            if (maxlength && $(this).val().length >= maxlength) {
-                $(this).val($(this).val().slice(0, maxlength - 1));
-            }
-        });
-    };
-}($));
-
-$('input[type="number"]').maxlength();
-		</script>
-
+	
 
 	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<a href="check-in_summary.html" onclick="window.history.go(-1); return false;"><img src="images/backbutton.png" alt style="height: 50px;float: left;""></a>
