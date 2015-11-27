@@ -42,22 +42,32 @@ function fail(uuid)
 
 
 
-alert("In else loop");
 
 $('input[type="number"]').keypress(function( event ){
     var key = event.which;
     var value = $(this).val();
-   alert("Value"+value);
-   alert("Value Length"+value.length);
-   if( value.length > 8 )
+   
+   if( value.length > 7 )
    {
-   	alert("Stop");
+   
    	event.preventDefault();
    }
     if( ! ( key >= 48 && key <= 57 ) && key !=46)
         event.preventDefault();
 });
 
+$('input[type="number"]').keypress(function( event ){
+    var key = event.which;
+    var value = $(this).val();
+   
+   if( value.length > 5 )
+   {
+   
+   	event.preventDefault();
+   }
+    if( ! ( key >= 48 && key <= 57 ) && key !=46)
+        event.preventDefault();
+});
 
 
 
