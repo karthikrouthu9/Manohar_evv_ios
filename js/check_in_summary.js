@@ -279,7 +279,7 @@ function fail(uuid)
      {
 
 	
-			var d1 = moment(checked_in_time_temp).format("YYYY-MM-DD HH:mm");
+			var d1 = moment(checked_in_time_temp);
 			
 	 
      // var checked_in_time_temp = new Date(checked_in_time_temp);;
@@ -317,7 +317,7 @@ function fail(uuid)
 var d3 = new Date(mydatestr);
 
 	
-			var d3 = moment().format("YYYY-MM-DD HH:mm");
+			var d3 = moment();
 
 			
 			
@@ -326,16 +326,13 @@ alert(d1+' **** '+d3);
 alert('loc 102hhh');
 
 alert("Before");
-var y=moment('2009-07-15 00:00:00').unix();
-alert('loc 105 y '+ y);
 
 var x=d3.unix();
-var y=moment('2009-07-15 00:00:00').unix();
-alert(x+' xxxx' + y);
+alert(x+' xxxx' );
 
 y=d1.unix();
 alert('loc 103');
-alert(x+' +++++ '+y);
+alert(' yyyy '+y);
 
   //x=d1.getTime() - d2.getTime();
   // x=d2.getTime() - d1.getTime();
