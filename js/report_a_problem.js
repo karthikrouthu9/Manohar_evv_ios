@@ -77,6 +77,7 @@ function fail(uuid)
 					}
 					else
 					{
+						alert("Else");
 						$('#submit').html('Loading...');
 				    	$('#submit').prop('disabled', true);
 				    	$('#issue_input').prop('disabled', true);
@@ -104,6 +105,8 @@ function fail(uuid)
 			
 			
 			var device_uuid = device1.uuid;
+			alert("Device Value");
+			alert(device_uuid);
 	var d = document.getElementById("device_uuid");
 	var token =token;
 	var header = "X-CSRF-TOKEN";
