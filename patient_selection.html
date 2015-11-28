@@ -369,7 +369,7 @@ $('#collapse2').on('.panel-collapse.collapse.in'), function() {
 
    function ShowPosition(position) {
    
-   alert("Gps Enabled");
+   
    onclick_id_href=onclick_id;
      var value = $('#'+onclick_id_href).attr("href");
    	window.location.href =value;
@@ -377,9 +377,14 @@ $('#collapse2').on('.panel-collapse.collapse.in'), function() {
 			    
 			}
 		 function ShowError(error) {
-		 alert("Error Function");
-		 alert("Before plugin");
-	cordova.plugins.diagnostic.switchToSettings(successCallback, errorCallback);
+		 var text;
+    var selected = confirm("Location settings are disabled. Press");
+    if (selected == true) {
+       cordova.plugins.diagnostic.switchToSettings(successCallback, errorCallback);
+    } else {
+        
+    }
+	
 		 
 	
 		 
