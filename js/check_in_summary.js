@@ -487,9 +487,9 @@ function exitFromApp()
 function goToCheckOut()
 {
 	
-	var sch_uuid = getURLParameters('sch_uuid');
+	//var sch_uuid = getURLParameters('sch_uuid');
 	
-	window.location.href="check_out.html?sch_uuid="+sch_uuid;
+	//window.location.href="check_out.html?sch_uuid="+sch_uuid;
 	$(".proceed_to_check_out_button").prop('disabled', true);
 	 $('#hidden_timecheck').val('1');
 	  //document.getElementsByClassName("show_schedules_button").disabled = true;
