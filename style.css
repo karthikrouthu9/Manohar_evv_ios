@@ -58,7 +58,7 @@ form[role=global] > div {
 .form-links a {
 				color: #fff;
 			  }
-#submit_button, #send_email, #check_in_time, #log_out_button_id
+#submit_button, #send_email, #check_in_time, #log_out_button_id, #submit_button_alert
 {
 background-color: #1357A6;
 }
