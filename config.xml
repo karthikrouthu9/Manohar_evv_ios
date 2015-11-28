@@ -48,7 +48,7 @@
    	
       <preference name="orientation" value="portrait" />
 <preference name="StatusBarOverlaysWebView" value="false" />
-<preference name="SplashScreen" value="none"/>
+
 
    
       	<gap:platform name="ios" />
