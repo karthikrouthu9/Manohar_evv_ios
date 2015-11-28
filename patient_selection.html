@@ -377,13 +377,34 @@ $('#collapse2').on('.panel-collapse.collapse.in'), function() {
 			    
 			}
 		 function ShowError(error) {
-		 var text;
-    var selected = confirm("Location settings are disabled. Press");
-    if (selected == true) {
-       cordova.plugins.diagnostic.switchToSettings(successCallback, errorCallback);
-    } else {
-        
-    }
+		 
+		 bootbox.dialog({
+	closeButton: false,
+	  message: "Location settings are disabled. ",
+	  title: "Alert",
+	  buttons: {
+	    success: {
+	      label: "Settings",
+	      className: "btn-primary",
+	      callback: function() {
+	    	   cordova.plugins.diagnostic.switchToSettings(successCallback, errorCallback);
+	      }
+	    },
+	    danger: {
+	      label: "Cancel",
+	      className: "btn-warning",
+	      callback: function() {
+	        
+	      }
+	    }
+	    
+	  }
+	});
+		 
+		 
+		 
+		 
+	
 	
 		 
 	
@@ -403,12 +424,12 @@ $('#collapse2').on('.panel-collapse.collapse.in'), function() {
 		 
 		 function successCallback()
 		 {
-		 	alert("Success Call back");
+		 
 		 }
 		 
 		 function errorCallback()
 		 {
-		 	alert("Error Callback");
+		 
 		 }
 		 
 		 
