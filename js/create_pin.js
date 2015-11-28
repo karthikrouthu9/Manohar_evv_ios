@@ -22,7 +22,7 @@ function success(uuid)
 };		
 
 function fail(uuid)		
-{		
+{	};	
     
     
 		function onDeviceReady() {
