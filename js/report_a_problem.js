@@ -105,14 +105,18 @@ function fail(uuid)
 			
 			
 			var device_uuid = device1.uuid;
-			alert("Device Value");
-			alert(device_uuid);
+		
 	var d = document.getElementById("device_uuid");
 	var token =token;
 	var header = "X-CSRF-TOKEN";
     $(document).ajaxSend(function(e, xhr, options) {
         xhr.setRequestHeader(header, token);
     });
+	
+		alert("Device Value");
+			alert(device_uuid);
+	
+	
 	
             $.ajax({
               url: 'http://183.82.96.212:8080/m_service/m_resources/save_device_issues',
