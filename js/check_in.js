@@ -33,7 +33,7 @@ function success(uuid)
 };		
 
 function fail(uuid)		
-{		alert("failure function reg");};	
+{		};	
     
     
 		function onDeviceReady() {
@@ -710,7 +710,7 @@ $(document).ready(function(){
 		var user_id = getURLParameters('user_id');
 		var patient_availability_status =$('input[name="my-checkbox"]').is(":checked");
 		var device_uuid = device1.uuid;
-	        alert('checkin-104');
+	        
 		if(patient_availability_status)
 		{ 
                             
