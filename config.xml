@@ -45,7 +45,7 @@
       <preference name="loadUrlTimeoutValue" value="20000" />
       <preference name="InAppBrowserStorageEnabled" value="true" />
       <preference name="disallowOverscroll" value="true" />
-   	
+   	<preference name="AutoHideSplashScreen" value="false" />
       <preference name="orientation" value="portrait" />
 <preference name="StatusBarOverlaysWebView" value="false" />
 
