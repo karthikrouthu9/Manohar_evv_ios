@@ -161,7 +161,7 @@ function fail(uuid)
       className: "btn-success",
       callback: function() {
     	 
-    	    navigator.app.backHistory();  
+    	    //navigator.app.backHistory();  
 
       }
     
