@@ -513,11 +513,37 @@ var sch_uuid = getURLParameters('sch_uuid');
 
 }
 function ShowError(error) {
+	
+		 bootbox.dialog({
+	closeButton: false,
+	  message: "Location is not enabled. Kindly turn it on by going to Settings-->Privacy-->Location Services-->On.",
+	  title: "Need access to Location",
+	  buttons: {
+	    success: {
+	      label: "Settings",
+	      className: "btn-primary",
+	      callback: function() {
+	    	   cordova.plugins.diagnostic.switchToSettings(successCallback, errorCallback);
+	      }
+	    },
+	    danger: {
+	      label: "Cancel",
+	      className: "btn-warning",
+	      callback: function() {
+	        
+	      }
+	    }
+	    
+	  }
+	});
+		 
+	
+	
 	$(".proceed_to_check_out_button").prop('disabled', false);
 	$(".show_schedules_button").prop('disabled', false);
 	$(".exit_app").prop('disabled', false);
 	 
-window.MainActivity.showSettingsAlert();
+//window.MainActivity.showSettingsAlert();
 
 }
 
