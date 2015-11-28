@@ -478,7 +478,7 @@ function exitFromApp()
 	$(".show_schedules_button").prop('disabled', true);
 	$(".exit_app").prop('disabled', true);
 
-     navigator.app.exitApp();
+    window.location='./logout.html';
 }
 
 
