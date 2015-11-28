@@ -1,6 +1,6 @@
 $(document).ready(function(){
 				
-alert('start');
+
     document.addEventListener("deviceready",onDeviceReady,false);       
 });
 
@@ -22,11 +22,11 @@ function success(uuid)
 };		
 
 function fail(uuid)		
-{		alert("failure function reg");};	
+{		
     
     
 		function onDeviceReady() {
-                    alert('in');
+                    
                        window.plugins.uniqueDeviceID.get(success, fail);
     }
     function create_pin_page(){
