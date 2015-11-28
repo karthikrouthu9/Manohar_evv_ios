@@ -30,7 +30,7 @@ function success(uuid)
 };		
 
 function fail(uuid)		
-{		alert("failure function reg");};	
+{	};	
     
     
 		function onDeviceReady() {
