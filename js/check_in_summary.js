@@ -547,6 +547,17 @@ function ShowError(error) {
 
 }
 
+ function successCallback()
+		 {
+		 
+		 }
+		 
+		 function errorCallback()
+		 {
+		 
+		 }
+
+
 function go_to_show_schedules()
 {
 	$(".proceed_to_check_out_button").prop('disabled', true);
