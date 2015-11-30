@@ -29,6 +29,7 @@ function fail(uuid)
  
         var element = document.getElementById('deviceProperties');
 		var device_uuid = device1.uuid;
+		alert("Device1: "+device_uuid);
        	var device_name  = device.name;
        	var device_model  = device.model;
        	var device_platform =  device.platform;                        
