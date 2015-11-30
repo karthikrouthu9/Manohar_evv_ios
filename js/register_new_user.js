@@ -1,6 +1,6 @@
 $(document).ready(function(){
 				
-alert("Document Ready");
+
     document.addEventListener("deviceready",onDeviceReady,false);       
 });
 
@@ -29,7 +29,7 @@ function fail(uuid)
  
         var element = document.getElementById('deviceProperties');
 		var device_uuid = device1.uuid;
-		alert("Device1: "+device_uuid);
+		
        	var device_name  = device.name;
        	var device_model  = device.model;
        	var device_platform =  device.platform;                        
@@ -215,7 +215,7 @@ var device_model = document.getElementById("device_model");
 var device_platform = document.getElementById("device_platform");
 var device_version = document.getElementById("device_version");
 
-alert(device1.uuid);
+
 
  $.ajaxSetup({
         xhrFields: {
@@ -268,8 +268,7 @@ alert(device1.uuid);
     $(document).ajaxSend(function(e, xhr, options) {
         xhr.setRequestHeader(header, token);
     });
-	alert("Before Device Value");
-	alert("Karthik : "+device1.uuid);
+	
             $.ajax({
               url: 'http://183.82.96.212:8080/?q=m_service/m_resources/register_device',
               type: "POST",
