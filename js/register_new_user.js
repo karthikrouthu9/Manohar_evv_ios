@@ -205,18 +205,18 @@ return false;
     
     function makeCorsRequest_register(username,password)
      {
-     
+     alert("Submit Func");
  
  var username=username;
  var password=password;
 
-//var device_uuid = document.getElementById("device_uuid");
-var device_name = document.getElementById('device_name');
+var device_uuid = document.getElementById("device_uuid");
+var device_name = document.getElementById("device_name");
 var device_model = document.getElementById("device_model");
 var device_platform = document.getElementById("device_platform");
 var device_version = document.getElementById("device_version");
 
-
+alert(device_uuid);
 
  $.ajaxSetup({
         xhrFields: {
