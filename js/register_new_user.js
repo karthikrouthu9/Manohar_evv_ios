@@ -205,8 +205,7 @@ return false;
     
     function makeCorsRequest_register(username,password)
      {
-     alert("Submit Func");
- alert(device1.uuid);
+    
  var username=username;
  var password=password;
 
@@ -216,7 +215,7 @@ var device_model = document.getElementById("device_model");
 var device_platform = document.getElementById("device_platform");
 var device_version = document.getElementById("device_version");
 
-alert(device_uuid);
+alert(device1.uuid);
 
  $.ajaxSetup({
         xhrFields: {
@@ -270,7 +269,7 @@ alert(device_uuid);
         xhr.setRequestHeader(header, token);
     });
 	alert("Before Device Value");
-	alert("Karthik : "+device_uuid);
+	alert("Karthik : "+device1.uuid);
             $.ajax({
               url: 'http://183.82.96.212:8080/?q=m_service/m_resources/register_device',
               type: "POST",
