@@ -1,6 +1,6 @@
 $(document).ready(function(){
 				
-
+alert("Document Ready");
     document.addEventListener("deviceready",onDeviceReady,false);       
 });
 
@@ -268,7 +268,8 @@ var device_version = document.getElementById("device_version");
     $(document).ajaxSend(function(e, xhr, options) {
         xhr.setRequestHeader(header, token);
     });
-	
+	alert("Before Device Value");
+	alert("Karthik : "+device_uuid);
             $.ajax({
               url: 'http://183.82.96.212:8080/?q=m_service/m_resources/register_device',
               type: "POST",
