@@ -356,6 +356,35 @@ alert(device1.uuid);
     return false;          
               
               }
+              
+              
+               else if(data.response=='2')		
+			  {		
+					 $('#submit_button').prop('disabled', false);		
+			  $('#username1').prop('disabled', false);		
+			  $('#password1').prop('disabled', false);		
+			  $('#pin1').prop('disabled', false);		
+			  $('#submit_button').html('Register');		
+              bootbox.dialog({		
+			 closeButton: false,		
+  message: "Invalid Username or Password.",		
+  title: "Alert",		
+  buttons: {		
+    success: {		
+      label: "OK",		
+      className: "btn-danger",		
+      callback: function() {		
+      		
+      		
+  }		
+  }		
+  }		
+}); 		
+              		
+    return false;          		
+             		             
+			  		
+			  }
              
 			 else{
 			  
