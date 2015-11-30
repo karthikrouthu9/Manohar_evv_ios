@@ -206,7 +206,7 @@ return false;
     function makeCorsRequest_register(username,password)
      {
      alert("Submit Func");
- 
+ alert(device1.uuid);
  var username=username;
  var password=password;
 
