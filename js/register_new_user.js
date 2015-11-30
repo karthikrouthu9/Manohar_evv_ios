@@ -210,7 +210,7 @@ return false;
  var username=username;
  var password=password;
 
-var device_uuid = document.getElementById("device_uuid");
+//var device_uuid = document.getElementById("device_uuid");
 var device_name = document.getElementById('device_name');
 var device_model = document.getElementById("device_model");
 var device_platform = document.getElementById("device_platform");
